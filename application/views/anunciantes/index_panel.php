@@ -248,11 +248,7 @@
 						<div class="card shadow-none border oferta oferta-<?=$oferta->id_oferta?>">
 							<a href="<?php echo base_url(); ?>anunciantes/oferta/<?=$oferta->id_oferta?>" target="_blank">
 								<div class="p-4">
-                    <div class="position-relative">
-                        <div class="progress-label text-success border-success mb-3"> <!-- mb-3 en lugar de mb-2 -->
-                            Porcentaje de inversión <?php echo number_format($oferta->porc_inversion, 0, ",", ".") ?>%
-                        </div>
-                    </div>                                    
+                                   
                 </div>
 									<div class="p-4">
                            <div class="h5"><?=$oferta->titulo?></div>
