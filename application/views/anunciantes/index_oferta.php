@@ -11,17 +11,17 @@
     <title>Obbak || Panel</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="https://app.obbak.es/assets/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:8000/obbak/assets/images/favicon.ico" />
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="https://app.obbak.es/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/obbak/assets/css/bootstrap.min.css" />
     <!--! END: Bootstrap CSS-->
     <!--! BEGIN: Vendors CSS-->
-    <link rel="stylesheet" type="text/css" href="https://app.obbak.es/assets/vendors/css/vendors.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://app.obbak.es/assets/vendors/css/daterangepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/obbak/assets/vendors/css/vendors.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/obbak/assets/vendors/css/daterangepicker.min.css" />
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="https://app.obbak.es/assets/css/theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/obbak/assets/css/theme.min.css" />
     <!--! END: Custom CSS-->
     <!--! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries !-->
     <!--! WARNING: Respond.js doesn"t work if you view the page via file: !-->
@@ -58,7 +58,7 @@
     <!-- Slide 1 (Video) -->
     <div class="carousel-item active">
       <video class="d-block w-100" autoplay loop muted playsinline style="object-fit: cover; height: 500px;">
-        <source src="https://app.obbak.es/images/sonrisa/2113040/video_1.mp4" type="video/mp4" />
+        <source src="http://localhost:8000/obbak/images/sonrisa/2113040/video_1.mp4" type="video/mp4" />
       </video>
       <div class="carousel-caption d-none d-md-block">
         <h5>First Slide</h5>
@@ -68,7 +68,7 @@
 
     <!-- Slide 2 (Imagen) -->
     <div class="carousel-item">
-      <img src="https://app.obbak.es/images/sonrisa/2113040/imagen_2.png" class="d-block w-100" style="object-fit: cover; height: 500px;" alt="Imagen 2">
+      <img src="http://localhost:8000/obbak/images/sonrisa/2113040/imagen_2.png" class="d-block w-100" style="object-fit: cover; height: 500px;" alt="Imagen 2">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second Slide</h5>
         <p>Descripción de la imagen.</p>
@@ -736,7 +736,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/google-drive.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/google-drive.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">Google Drive: Cloud Storage & File Sharing</a>
@@ -751,7 +751,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/dropbox.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/dropbox.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">Dropbox: Cloud Storage & File Sharing</a>
@@ -766,7 +766,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/github.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/github.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">GitHub: Where the world builds software</a>
@@ -781,7 +781,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/gitlab.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/gitlab.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">GitLab: The One DevOps Platform</a>
@@ -796,7 +796,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/shopify.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/shopify.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">Shopify: Ecommerce Developers Platform</a>
@@ -811,7 +811,7 @@
                                         <div class="hstack justify-content-between p-4 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/whatsapp.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/whatsapp.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">WhatsApp: WhatsApp from Facebook is a FREE messaging and video calling app</a>
@@ -833,7 +833,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/facebook.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/facebook.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">Facebook: The World Most Popular Social Network</a>
@@ -848,7 +848,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/instagram.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/instagram.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">Instagram: Edit & Share photos, Videos & Dessages</a>
@@ -863,7 +863,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/twitter.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/twitter.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">Twitter: It's what's happening / Twitter </a>
@@ -878,7 +878,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/spotify.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/spotify.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">Spotify: Web Player: Music for everyone </a>
@@ -893,7 +893,7 @@
                                         <div class="hstack justify-content-between p-4 mb-3 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/youtube.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/youtube.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">YouTube: The World Largest Video Sharing Platform</a>
@@ -908,7 +908,7 @@
                                         <div class="hstack justify-content-between p-4 border border-dashed border-gray-3 rounded-1">
                                             <div class="hstack me-4">
                                                 <div class="wd-40">
-                                                    <img src="https://app.obbak.es/assets/images/brand/pinterest.png" class="img-fluid" alt="">
+                                                    <img src="http://localhost:8000/obbak/assets/images/brand/pinterest.png" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="ms-4">
                                                     <a href="javascript:void(0);" class="fw-bold mb-1 text-truncate-1-line">Pinterest: Discover recipes, home ideas, style inspiration and other ideas to try</a>
@@ -1244,7 +1244,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        fetch("https://app.obbak.es/get_data.php")
+        fetch("http://localhost:8000/obbak/get_data.php")
         .then(response => response.json())
         .then(data => {
             console.log("Datos recibidos:", data);
@@ -1297,18 +1297,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 </script>    
     <!--! BEGIN: Vendors JS !-->
-    <script src="https://app.obbak.es/assets/vendors/js/vendors.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/vendors/js/vendors.min.js"></script>
     <!-- vendors.min.js {always must need to be top} -->
-    <script src="https://app.obbak.es/assets/vendors/js/daterangepicker.min.js"></script>
-    <script src="https://app.obbak.es/assets/vendors/js/apexcharts.min.js"></script>
-    <script src="https://app.obbak.es/assets/vendors/js/circle-progress.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/vendors/js/daterangepicker.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/vendors/js/apexcharts.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/vendors/js/circle-progress.min.js"></script>
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
-    <script src="https://app.obbak.es/assets/js/common-init.min.js"></script>
-    <script src="https://app.obbak.es/assets/js/dashboard-init.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/js/common-init.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/js/dashboard-init.min.js"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
-    <script src="https://app.obbak.es/assets/js/theme-customizer-init.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/js/theme-customizer-init.min.js"></script>
     <!--! END: Theme Customizer !-->
 
 
