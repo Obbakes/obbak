@@ -1,0 +1,3226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+ <head>
+  <title>Robust Designs</title>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta name="x-apple-disable-message-reformatting"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+  <meta content="telephone=no" name="format-detection" />
+
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--<![endif]-->
+
+  <!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+  <!--[if mso]>
+<style>
+body, 
+table tr,
+table td, 
+a, span, 
+table.MsoNormalTable {
+  font-family: Helvetica, sans-serif, arial !important; 
+}
+</style>
+<![endif]-->
+<style type="text/css">
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Muli Regular'), local('Muli-Regular'), url(https://fonts.gstatic.com/s/muli/v10/z6c3Zzm51I2zB_Gi7146Bg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Muli SemiBold'), local('Muli-SemiBold'), url(https://fonts.gstatic.com/s/muli/v10/SSDjnwDvv9AWqGWApzySVQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v10/BYPM-GE291ZjIXBWrtCwejOo-lJoxoMO4vrg2XwIHQk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v10/q2OIMsAtXEkOulLQVdSl06VlZKEoJGujTpfWnQT9bUY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Montserrat Medium Italic'), local('Montserrat-MediumItalic'), url(https://fonts.gstatic.com/s/montserrat/v10/zhwB3-BAdyKDf0geWr9Ft81Lch-SD8r0CsJ60meulZ8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Montserrat SemiBold Italic'), local('Montserrat-SemiBoldItalic'), url(https://fonts.gstatic.com/s/montserrat/v10/zhwB3-BAdyKDf0geWr9Ft_Bf3Xtc57ojmY2ox2Xv8Go.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 300;
+   src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v10/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 400;
+   src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 600;
+   src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://fonts.gstatic.com/s/opensans/v10/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 700;
+   src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v10/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 800;
+   src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(http://fonts.gstatic.com/s/opensans/v10/EInbV5DfGHOiMmvb1Xr-hugdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: italic;
+   font-weight: 300;
+   src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(http://fonts.gstatic.com/s/opensans/v10/PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/PRmiXeptR36kaC0GEAetxh_xHqYgAV9Bl_ZQbYUxnQU.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: italic;
+   font-weight: 400;
+   src: local('Open Sans Italic'), local('OpenSans-Italic'), url(http://fonts.gstatic.com/s/opensans/v10/xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: italic;
+   font-weight: 600;
+   src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(http://fonts.gstatic.com/s/opensans/v10/PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/PRmiXeptR36kaC0GEAetxn5HxGBcBvicCpTp6spHfNo.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: italic;
+   font-weight: 700;
+   src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(http://fonts.gstatic.com/s/opensans/v10/PRmiXeptR36kaC0GEAetxolIZu-HDpmDIZMigmsroc4.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
+ }
+ @font-face {
+   font-family: 'Open Sans';
+   font-style: italic;
+   font-weight: 800;
+   src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url(http://fonts.gstatic.com/s/opensans/v10/PRmiXeptR36kaC0GEAetxnibbpXgLHK_uTT48UMyjSM.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v10/PRmiXeptR36kaC0GEAetxkCDe67GEgBv_HnyvHTfdew.woff) format('woff');
+ }
+@font-face {
+  font-family: 'PT Sans Caption';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans Caption'), local('PTSans-Caption'), url(https://fonts.gstatic.com/s/ptsanscaption/v9/OXYTDOzBcXU8MTNBvBHeSVu3pQpJXC1E_Hw7zMp8vJM.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'PT Sans Caption';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Caption Bold'), local('PTSans-CaptionBold'), url(https://fonts.gstatic.com/s/ptsanscaption/v9/Q-gJrFokeE7JydPpxASt2-AG5JKECrpbRn4WyrgqwBM.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+ .ReadMsgBody {width: 100%; background-color: #f2f2f2;}
+ .ExternalClass {width: 100%; background-color: #f2f2f2;}
+ body { background-color: #f2f2f2; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none;}
+ table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+ img{-ms-interpolation-mode:bicubic;}
+ p {margin-bottom:0; margin:0}
+ a[x-apple-data-detectors] {
+   color:inherit !important;
+   text-decoration:none !important;
+   font-size:inherit !important;
+   font-family:inherit !important;
+   font-weight:inherit !important;
+   line-height:inherit !important;
+ }
+
+
+/*
+ GMAIL [lang] fix
+*/
+
+input[lang=tab], .tab,
+input[lang=x-tabcheck], .tabcheck {
+  display: none;
+}
+
+input[lang=x-tabcheck], .tabcheck {
+  height:0px;
+  visibility:hidden;
+}  
+
+div[lang=x-title1], .title1,
+div[lang=x-title2], .title2,
+div[lang=x-title3], .title3,
+div[lang=x-title4], .title4
+{
+  float: left;
+  padding:10px 0px 10px 0px;
+  cursor: pointer;
+  Margin-left: 10px;
+  Margin-bottom: 10px;
+  /*border-left: 10px solid #ffffff;*/
+  /*border-bottom: 10px solid #ffffff; */
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  font-size: 11px;
+  width: 138px;
+  color: #3B4450;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #3B4450;
+  font-weight: 600;
+  background-color:transparent;
+}
+
+div[lang=x-conte], #conte 
+{
+  display: block !important;
+  max-height: auto !important;
+  height: auto !important;
+}
+
+input[lang=x-tabcheck]:checked + div[lang=x-container],
+.tabcheck:checked + #container 
+{
+  height: 340px !important;
+  max-height: 340px !important;
+}
+
+input[lang=x-tabcheck]:checked + div[lang=x-conte], .tabcheck:checked + #conte
+input[lang=x-tab2]:checked + span div[lang=x-content2], 
+#tab2:checked + span div.content2,
+input[lang=x-tab3]:checked + span div[lang=x-content3],
+#tab3:checked + span div.content3,
+input[lang=x-tab4]:checked + span div[lang=x-content4],
+#tab4:checked + span div.content4
+{
+  display:block !important;
+  max-height: 334px !important;
+  height: 334px !important;
+}
+
+/* Tab buttons click color change */
+
+input[lang=x-tab1]:checked + span div[lang=x-title1],
+#tab1:checked + span .title1,
+input[lang=x-tab2]:checked + span div[lang=x-title2],
+#tab2:checked + span .title2,
+input[lang=x-tab3]:checked + span div[lang=x-title3],
+#tab3:checked + span .title3,
+input[lang=x-tab4]:checked + span div[lang=x-title4],
+#tab4:checked + span .title4
+{
+  background-color: #e48080;
+  color: #ffffff;
+}
+
+
+
+/*
+Progessive disclosure CSS
+*/
+
+/* Special styles for autistic email clients */
+
+td[class="article"], 
+td[class="article"] > div[class="arti"] {
+  -webkit-transition: 0.2s ease-in-out 0s;
+  -o-transition: 0.2s ease-in-out 0s;
+  transition: 0.2s ease-in-out 0s;
+}
+
+/** Expand article **/
+
+td[class="expArticle"]:hover + td[class="article"] > div[class="arti"],
+td[class="article"] > div[class="arti"]:hover {
+  height: 180px !important;
+}
+
+td[class="article"] > div[class="arti"] {
+  height: 0px;
+}
+
+/** Flip show-more arrow **/
+
+td[class="expArticle"]:hover img[class="expUp"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+
+@media screen and (min-width: 601px) {
+  .mainCont, 
+  *[lang="x-main"] {
+    width: 650px !important;
+  }
+  .contenttable, 
+  *[lang="x-content"] {
+    width: 600px !important;
+  }
+}
+
+@media screen and (max-width: 401px) {
+  body[yahoo] .center {
+    text-align: center !important;
+  }
+  .tablemobile, 
+  *[lang="x-tablem"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .title1, 
+  div[lang="x-title1"] {
+    Margin-left: 10px !important;
+  }
+  #container, 
+  div[lang=x-container] {
+  overflow: visible !important;
+  }
+  #expand-m, 
+  div[lang="expand-m"] {
+  height: 700px;
+  max-height: 700px;
+  }
+  input[lang=x-tabcheck]:checked + div[lang=x-conte], .tabcheck:checked + #conte
+  input[lang=x-tab2]:checked + span div[lang=x-content2], 
+  #tab2:checked + span div.content2,
+  input[lang=x-tab3]:checked + span div[lang=x-content3],
+  #tab3:checked + span div.content3,
+  input[lang=x-tab4]:checked + span div[lang=x-content4],
+  #tab4:checked + span div.content4 {
+    height: 700px !important;
+  max-height: 700px !important;
+  }
+  div[lang=x-title1], .title1,
+  div[lang=x-title2], .title2,
+  div[lang=x-title3], .title3,
+  div[lang=x-title4], .title4 {
+    width: 120px;
+  }
+}
+
+font {
+  font-family: 'Montserrat', 'Noto Sans', 'Open Sans', 'Source Sans Pro', 'Segoe UI','Segoe UI Web Regular','Segoe UI Symbol','Helvetica Neue',Arial,sans-serif;
+  -webkit-text-size-adjust:100% !important;
+  -ms-text-size-adjust:100% !important;
+  text-size-adjust:100% !important;
+}
+
+</style>
+ </head>
+ <body bgcolor="#f2f2f2" style="background-color: #f2f2f2; font-family: 'Montserrat', 'Gotham Rounded', 'Gotham', 'Noto Sans', 'Open Sans', 'Source Sans Pro', 'Segoe UI','Segoe UI Web Regular','Segoe UI Symbol','Helvetica Neue',Arial,sans-serif; margin: 0px; padding: 0px;" yahoo="fix" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<div class="center" style="background-color: #f2f2f2; width: 100%;">
+<!--[if gte mso 9]>
+<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false">
+<v:fill type="tile" src="" color="#f2f2f2"/>
+</v:background>
+<![endif]-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" style="border-collapse: collapse; min-width: 100% !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; table-layout: fixed;" width="100%">
+<tr>
+<td align="center" bgcolor="f2f2f2" valign="top" style="background-color: #f2f2f2;">
+<!--BackgroundColor Fix Start-->
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="contenttable" lang="x-content" style="border-collapse: collapse; max-width: 650px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
+<tbody>
+<tr>
+<td align="center" style="color: #b0b0b0; font-size: 13px; font-weight: 300; line-height: 18px; padding-top: 20px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px;" summary="hide"><font color="#b0b0b0" size="2" style="font-family: 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 400; text-size-adjust: 100%;"> Having trouble viewing in your inbox? <a href="robustview" style="text-decoration: none;">View this email in your browser.</a> </font></td>
+</tr>
+</tbody>
+</table>
+
+<table bgcolor='#dddddd' style='-moz-box-shadow: 0px 0px 5px #dddddd;-webkit-box-shadow: 0px 0px 5px #dddddd;box-shadow: 0px 0px 5px #dddddd;' border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<!--Shadow Start-->
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='f4f5f9' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='f4f5f9' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; background-color: #f4f5f9; width: 100%; max-width: 650px; min-width: 280px; background-size: 100% auto; background-position: center 0%; background-repeat: no-repeat;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 25px; line-height: 25px;' height="25">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' valign="bottom" style='text-align: center; vertical-align: bottom; padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' bgcolor='fffffd' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; max-width: 600px; width: 100%; box-shadow: 1px 2px 5px #cccccc;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td valign='top' align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px; vertical-align: top; font-size: 0px; text-align: center; direction: ltr;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table border='0' cellpadding='0' cellspacing='0' align='center' width="560" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 560px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; Margin: 0; Padding: 0;'>
+<![endif]-->
+
+<div style="width: 100%; max-width: 280px; display: inline-block; vertical-align: top; direction: ltr;">
+<table align="left" class="tablemobile" lang="x-tablem" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<tbody>
+<tr>
+<td align="center" height="20" style="color: transparent; font-size: 1px; height: 20px; line-height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" height="27" style="line-height: 100%; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;">
+<a href="#" style="color: inherit; text-decoration: none;">
+<img alt="" border="0" height="27" src="C:\Apache24\htdocs\bimads\dev/img/logo.png" style="display: block; max-width: 100px; min-width: 100px; height: 27px" width="100" />
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 280px; display: inline-block; vertical-align: top; direction: ltr;">
+<table align="right" border="0" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<tbody>
+<tr>
+<td align="center" height="20" style="color: transparent; font-size: 1px; height: 20px; line-height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;"> &nbsp; </td>
+</tr>
+<tr>
+<td align="center" valign="bottom" height="23" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; font-size: 12px; color: #000000; font-family: 'PT Sans Caption', 'Open Sans', sans-serif; text-align: center; text-size-adjust: 100%;">
+<font color="#000000" size="2" style="font-family: 'PT Sans Caption','Montserrat', 'Noto Sans', 'Open Sans',sans-serif; font-size: 12px; text-size-adjust: 100%;"><a href="#" style="text-decoration: none; color: #000000;">Idea&nbsp;Starters</a>&nbsp;&nbsp;&nbsp;<font color="#e1e1e1">&#124;</font>&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none; color: #000000;">Where&nbsp;to&nbsp;Buy</a>&nbsp; &nbsp;<font color="#e1e1e1">&#124;</font>&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none; color: #000000; border-bottom: 2px solid #777777">Just&nbsp;Do&nbsp;It</a>
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</tbody>
+</table>
+<![endif]-->
+
+</td>
+</tr>
+<tr>
+<td align="center" height="20" style="color: transparent; font-size: 1px; height: 20px; line-height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style="padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px; text-align: center; vertical-align: top;">
+
+<!--[if (gte mso 9)|(IE)]>
+<table border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px; width: 100%'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 15px; line-height: 15px;' height="15">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style="text-align: center; vertical-align: top; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+
+<div id="expand-m" lang="expand-m" style="width: 100%; max-width: 600px; display: inline-block; vertical-align: top;">
+
+<form>
+<input type="radio" class="tabcheck" lang="x-tabcheck" style="display:none !important; mso-hide:all" checked>
+<div id="container" lang="x-container" style="width:100%; max-width: 600px;overflow:hidden;">
+
+<input type="radio" class="tabcheck" lang="x-tabcheck" style="display:none !important; mso-hide:all" checked>
+
+<div id="conte" lang="x-conte" style="display:none;height:0px;max-height:0px;overflow:hidden;">
+
+<label>
+<input type="radio" name="tab" class="tab" lang="x-tab1"  id="tab1" style="display:none !important;" checked>
+<span>
+<div class="title1" lang="x-title1" style="Margin-left: 0px;" editable="">Oferta</div>
+
+<label>
+<input type="radio" name="tab" class="tab" lang="x-tab2" id="tab2" style="display:none !important;">
+<span>
+<div class="title2" lang="x-title2" editable="">Audiencia</div>
+
+<label>
+<input type="radio" name="tab" class="tab" lang="x-tab3" id="tab3" style="display:none !important;">
+<span>
+<div class="title3" lang="x-title3" editable="">Soporte</div>
+
+<label>
+<input type="radio" name="tab" class="tab" lang="x-tab4" id="tab4" style="display:none !important;">
+<span>
+<div class="title4" lang="x-title4" editable="">Información</div>
+
+<div class="content4" lang="x-content4" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="max-width: 600px; width: 100%;">
+<tbody>
+<tr>
+<td align='center' valign="top" style="padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px; font-size: 0px; text-align: center; vertical-align: top;">
+
+<div style="width: 100%; max-width: 350px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' width="330">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style="line-height: 30px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 22px; color: #a73737; text-align: center;">
+<font size="4" color="a73737" style="font-size: 22px;">
+Keep Yourself <br />Warm This Winter
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 10px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;">
+<table align="center" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="290">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" valign="middle">
+<table align="right" bgcolor="7A2928" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 100%; background-color: #7A2928;" width="100%">
+<tbody>
+<tr>
+<td align="center" height="2" style="color: transparent; font-size: 1px; height: 2px; line-height: 2px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"> &nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" width="70%">
+<table align="center" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: transparent;">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 5px; padding-left: 10px; padding-right: 10px; padding-top: 5px; font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-transform: uppercase; font-size: 12px; color: #7A2928; line-height: 16px; text-align: center; font-weight: 600; letter-spacing: 1px;">
+<font color="#7A2928" size="2" style="font-size: 12px;text-transform: uppercase;font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 600;color: #7A2928;letter-spacing: 1px;">
+Just Arrived 10 Days Ago
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" valign="middle">
+<table align="left" bgcolor="7A2928" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 100%; background-color: #7A2928;" width="100%">
+<tbody>
+<tr>
+<td align="center" height="2" style="color: transparent; font-size: 1px; height: 2px; line-height: 2px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"> &nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style="line-height: 22px; padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 15px; font-family: 'Muli', 'Open Sans', 'Source Sans Pro', sans-serif; color: #555555; text-align: center;">
+<font size="2" color="#555555" style="font-size: 15px; font-family: 'Muli', 'Open Sans', 'Source Sans Pro', sans-serif">
+These soft-cloth hoodies is exactly what you need this winter because we say so
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor='a73737' background="https://robust.email/files/template_3/images/gra-btn-06.jpg" class="btn-call" style="background-color: #a73737; background-image: url('https://robust.email/files/template_3/images/gra-btn-06.jpg'); background-repeat: no-repeat; background-position: center center; background-size: 100% auto; box-shadow: 5px 5px 10px #cccccc;" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td style='padding-left: 15px;padding-right: 15px; padding-bottom: 8px; padding-top: 8px; line-height: 15px; font-size: 12px; color: #ffffff; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-align: center;' align='center'>
+<a style='text-decoration:none; color: #ffffff;' href='#'>
+<font size='2' color='ffffff' style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+Hide under one
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" width="50%" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 250px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right' width="250">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<img src="https://robust.email/files/template_3/images/hoodie_01.png" width="240" height="240" border="0" style="max-width: 240px; width: 240px; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</span>
+</label>
+
+<div class="content3" lang="x-content3" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="max-width: 600px; width: 100%;">
+<tbody>
+<tr>
+<td align='center' valign="top" style="padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px; font-size: 0px; text-align: center; vertical-align: top;">
+
+<div style="width: 100%; max-width: 350px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' width="330">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style="line-height: 30px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 22px; color: #434343; text-align: center;">
+<font size="4" color="434343" style="font-size: 22px;">
+Futuristic Slip-On That<br />Will Go Down In History
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 10px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;">
+<table align="center" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="290">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" valign="middle">
+<table align="right" bgcolor="424242" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 100%; background-color: #424242;" width="100%">
+<tbody>
+<tr>
+<td align="center" height="2" style="color: transparent; font-size: 1px; height: 2px; line-height: 2px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"> &nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" width="70%">
+<table align="center" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: transparent;">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 5px; padding-left: 10px; padding-right: 10px; padding-top: 5px; font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-transform: uppercase; font-size: 12px; color: #424242; line-height: 16px; text-align: center; font-weight: 600; letter-spacing: 1px;">
+<font color="#424242" size="2" style="font-size: 12px;text-transform: uppercase;font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 600;color: #424242;letter-spacing: 1px;">
+Just Arrived 10 Days Ago
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" valign="middle">
+<table align="left" bgcolor="424242" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 100%; background-color: #424242;" width="100%">
+<tbody>
+<tr>
+<td align="center" height="2" style="color: transparent; font-size: 1px; height: 2px; line-height: 2px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"> &nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style="line-height: 22px; padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 15px; font-family: 'Muli', 'Open Sans', 'Source Sans Pro', sans-serif; color: #555555; text-align: center;">
+<font size="2" color="#555555" style="font-size: 15px; font-family: 'Muli', 'Open Sans', 'Source Sans Pro', sans-serif">
+Shoes for rebel who do take <br />
+orders from an email newsletter
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor='434343' background="https://robust.email/files/template_3/images/gra-btn-05.jpg" class="btn-call" style="background-color: #434343; background-image: url('https://robust.email/files/template_3/images/gra-btn-05.jpg'); background-repeat: no-repeat; background-position: center center; background-size: 100% auto; box-shadow: 5px 5px 10px #cccccc;" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td style='padding-left: 15px;padding-right: 15px; padding-bottom: 8px; padding-top: 8px; line-height: 15px; font-size: 12px; color: #ffffff; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-align: center;' align='center'>
+<a style='text-decoration:none; color: #ffffff;' href='#'>
+<font size='2' color='ffffff' style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+One-kind kicks
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" width="50%" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 250px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right' width="250">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<img src="https://robust.email/files/template_3/images/shoes_01.png" width="240" height="240" border="0" style="max-width: 240px; width: 240px; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</span>
+</label>
+
+<div class="content2" lang="x-content2" style="height:0px;max-height:0px;overflow:hidden;clear:left;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="max-width: 600px; width: 100%;">
+<tbody>
+<tr>
+<td align='center' valign="top" style="padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px; font-size: 0px; text-align: center; vertical-align: top;">
+
+<div style="width: 100%; max-width: 350px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' width="330">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style="line-height: 30px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 22px; color: #642b73; text-align: center;">
+<font size="4" color="642b73" style="font-size: 22px;">
+The Designer Shirts <br />are Among Us
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 10px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;">
+<table align="center" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="290">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" valign="middle">
+<table align="right" bgcolor="C5426E" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 100%; background-color: #C5426E;" width="100%">
+<tbody>
+<tr>
+<td align="center" height="2" style="color: transparent; font-size: 1px; height: 2px; line-height: 2px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"> &nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" width="70%">
+<table align="center" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: transparent;">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 5px; padding-left: 10px; padding-right: 10px; padding-top: 5px; font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-transform: uppercase; font-size: 12px; color: #C5426E; line-height: 16px; text-align: center; font-weight: 600; letter-spacing: 1px;">
+<font color="#C5426E" size="2" style="font-size: 12px;text-transform: uppercase;font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 600;color: #C5426E;letter-spacing: 1px;">
+Just Arrived 10 Days Ago
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" valign="middle">
+<table align="left" bgcolor="C5426E" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 100%; background-color: #C5426E;" width="100%">
+<tbody>
+<tr>
+<td align="center" height="2" style="color: transparent; font-size: 1px; height: 2px; line-height: 2px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"> &nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style="line-height: 22px; padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 15px; font-family: 'Muli', 'Open Sans', 'Source Sans Pro', sans-serif; color: #555555; text-align: center;">
+<font size="2" color="#555555" style="font-size: 15px; font-family: 'Muli', 'Open Sans', 'Source Sans Pro', sans-serif">
+Shirts for rebel who don't take <br />
+orders from an email newsletter
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor='642b73' background="https://robust.email/files/template_3/images/gra-btn-04.jpg" class="btn-call" style="background-color: #642b73; background-image: url('https://robust.email/files/template_3/images/gra-btn-04.jpg'); background-repeat: no-repeat; background-position: center center; background-size: 100% auto; box-shadow: 5px 5px 10px #cccccc;" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td style='padding-left: 15px;padding-right: 15px; padding-bottom: 8px; padding-top: 8px; line-height: 15px; font-size: 12px; color: #ffffff; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-align: center;' align='center'>
+<a style='text-decoration:none; color: #ffffff;' href='#'>
+<font size='2' color='ffffff' style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+Resist Society
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" width="50%" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 250px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right' width="250">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<img src="https://robust.email/files/template_3/images/shirts.png" width="240" height="240" border="0" style="max-width: 240px; width: 240px; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</span>
+</label>
+
+</span>
+</label>
+
+</div>
+
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="max-width: 600px; width: 100%;">
+<tbody>
+<tr>
+<td align='center' valign="top" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 0px; text-align: center; vertical-align: top;">
+
+<div style="width: 100%; max-width: 350px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' width="330">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style="line-height: 30px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 22px; color: #3B4450; text-align: center;">
+<font size="4" color="3B4450" style="font-size: 22px;">
+Brand Day en el Confidencial <br />For Your Holiday Travel
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 10px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;">
+<table align="center" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" width="290">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" valign="middle">
+<table align="right" bgcolor="6c6219" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td align="center" height="2" style="color: transparent; font-size: 1px; height: 2px; line-height: 2px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"> &nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" width="70%">
+<table align="center" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: transparent;">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 5px; padding-left: 10px; padding-right: 10px; padding-top: 5px; font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-transform: uppercase; font-size: 12px; color: #6c6219; line-height: 16px; text-align: center; font-weight: 600; letter-spacing: 1px;">
+<font color="#818181" size="2" style="font-size: 12px;text-transform: uppercase;font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 600;color: #6c6219;letter-spacing: 1px;">
+Just Arrived 10 Days Ago
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" style="padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;" valign="middle">
+<table align="left" bgcolor="6c6219" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td align="center" height="2" style="color: transparent; font-size: 1px; height: 2px; line-height: 2px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;"> &nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style="line-height: 22px; padding-top: 20px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px; font-size: 15px; font-family: 'Muli', 'Open Sans', 'Source Sans Pro', sans-serif; color: #555555; text-align: center;">
+<font size="2" color="#555555" style="font-size: 15px; font-family: 'Muli', 'Open Sans', 'Source Sans Pro', sans-serif;">
+last <a style="text-decoration: none; color: #746219; border-bottom: 1px solid #746219;" href="#">Christmas</a> I gave you my heart,<br />
+But the very next day you gave it away
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor='cb356b' background="https://robust.email/files/template_3/images/gra-btn-03.jpg" class="btn-call" style="background-color: #cb356b; background-image: url('https://robust.email/files/template_3/images/gra-btn-03.jpg'); background-repeat: no-repeat; background-position: center center; background-size: 100% auto; box-shadow: 5px 5px 10px #cccccc;" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td style='padding-left: 15px;padding-right: 15px; padding-bottom: 8px; padding-top: 8px; line-height: 15px; font-size: 12px; color: #ffffff; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-align: center;' align='center'>
+<a style='text-decoration:none; color: #ffffff;' href='#'>
+<font size='2' color='ffffff' style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+XDay Collection
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" width="50%" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div class="oferta-imagen">
+<img src="<?php echo base_url() . $oferta->imagen_tipo_oferta; ?>" alt="oferta" />
+</div>
+
+</td>
+</tr>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td align="center" style="padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;">
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align="center" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table border='0' bgcolor="20BDA8" background="https://robust.email/files/template_3/images/gra-bg-01.jpg" class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="background-color: #20BDA8; background-image: url('https://robust.email/files/template_3/images/gra-bg-01.jpg'); background-repeat: no-repeat; background-size: 100% auto; background-position: center center;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; line-height: 100%'>
+<img src="https://robust.email/files/template_3/images/top-img.png" width="600" height="auto" border="0" style="width: 100%; max-width: 600px; min-width: 240px; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 25px; line-height: 25px;' height="25">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td valign='top' align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; font-size: 0px; text-align: center; direction: ltr'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table border='0' cellpadding='0' cellspacing='0' align='center' width="600" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; Margin: 0; Padding: 0;'>
+<![endif]-->
+
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td style="padding-top: 2px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px;" align="center">
+<table cellspacing="0" cellpadding="2" border="0" bgcolor="287cb9" align="left" style="background-color: #287cb9">
+<tbody>
+<tr>
+<td style="padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;" align="center">
+<table cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td style="padding-top: 3px; padding-bottom: 3px; padding-left: 8px; padding-right: 8px; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; color: #ffffff; line-height: 18px; background-color: #287cb9" bgcolor="287cb9" align="center">
+<font style="font-size: 12px;" size="2" color="#ffffff">
+Blog
+</font>
+</td>
+<td style="padding-top: 3px; padding-bottom: 3px; padding-left: 8px; padding-right: 8px; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; color: #287cb9; line-height: 18px; background-color: #fffffd" bgcolor="fffffd" align="center">
+<font style="font-size: 12px;" size="2" color="#287cb9">
+Newsletter
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 20px; line-height: 30px; font-size: 22px; color: #3B4450; text-align: left;'>
+<font size="4" color="#3B4450" style="font-size: 22px;">
+First template with Progressive disclosure on Themeforest! 
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='left' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;line-height: 24px; font-size: 16px; color: #3B4451; font-family: 'Muli', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-align: left;">
+<font size="3" color="#3B4451" style="font-family: 'Muli', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif;">
+Progressive disclosure creates aesthetic, understandable and focused design. Research proven and used by many successful businesses.
+<br /><br />
+<a href="#" style="text-decoration: none; color: #333333; border-bottom: 2px solid #777777">Continue reading...</a>
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</tbody>
+</table>
+<![endif]-->
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td align="center" style="line-height: 100%; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 100%;">
+<img src="https://robust.email/files/template_3/images/separator-11.png" width="650" height="35" border="0" style="max-width: 650px; min-width: 250px; width: 100%; height: auto; display: block; border: none;" alt=" " />
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<!--[if (gte mso 9)(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' cellpadding='0' cellspacing='0' align='center' lang='x-main' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 100%; background-color: #fffffd; max-width: 650px; min-width: 280px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="center" style="padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;">
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='width: 100%; max-width: 600px; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td valign='top' align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; font-size: 0px; text-align: center; direction: ltr'>
+
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td style="padding-top: 2px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px;" align="center">
+<table cellspacing="0" cellpadding="2" border="0" bgcolor="287cb9" align="left" style="background-color: #287cb9">
+<tbody>
+<tr>
+<td style="padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;" align="center">
+<table cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr>
+<td style="padding-top: 3px; padding-bottom: 3px; padding-left: 8px; padding-right: 8px; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; color: #ffffff; line-height: 18px; background-color: #287cb9" bgcolor="287cb9" align="center">
+<font style="font-size: 12px;" size="2" color="#ffffff">
+Holiday
+</font>
+</td>
+<td style="padding-top: 3px; padding-bottom: 3px; padding-left: 8px; padding-right: 8px; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; color: #287cb9; line-height: 18px; background-color: #fffffd" bgcolor="fffffd" align="center">
+<font style="font-size: 12px;" size="2" color="#287cb9">
+Season
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 20px; line-height: 30px; font-size: 22px; color: #3B4450; text-align: left;'>
+<font size="4" color="#3B4450" style="font-size: 22px;">
+Inspired by lightning <br />on a stormy night
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" align="center">
+<table style="background-color: #ebebeb; border-radius: 3px; box-shadow: -2px 2px 1px #cecece" cellspacing="0" cellpadding="0" border="0" bgcolor="ebebeb" align="left">
+<tbody>
+<tr>
+<td style="padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 6px; height: 17px; font-size: 11px; font-weight: 600; letter-spacing: 1px; color: #287cb9;" height="17" align="center">
+<a style="text-decoration:none;" href="#">
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="287cb9">Redefined Tees&nbsp;<img alt="" src="https://robust.email/files/template_3/images/arr-right-cadet.png" style="Padding-Bottom: 1px;" width="10" border="0" height="10" align="absmiddle"></font></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='left' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;line-height: 24px; font-size: 16px; color: #3B4451; font-family: 'Muli', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-align: left;">
+<font size="3" color="#3B4451" style="font-family: 'Muli', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif;">
+The new Thunder Night stock introduced this winter is a world class offering on lifestyle designs
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 40px; line-height: 40px;' height="40">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' cellpadding='0' cellspacing='0' align='center' lang='x-main' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 100%; background-color: #fffffd; max-width: 650px; min-width: 280px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 100%; max-width: 600px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px;">
+
+<table bgcolor="f5f5f5" width="100%" border='0' cellpadding='0' cellspacing='0' align='center' style="max-width: 600px; width: 100%; background-color: #f5f5f5; box-shadow: -2px 2px 10px #cccccc;">
+<tbody>
+<tr>
+<td style="width: 70px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; background-color: #eaeaea;" align="center" valign="middle" width="70" bgcolor="eaeaea">
+<img src="https://robust.email/files/template_3/images/shirt-storm.png" width="40" height="40" border="0" alt="" />
+</td>
+<td class="article" bgcolor="f5f5f5" align='center' style='padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; text-align: center;' valign="top">
+
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 20px; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; color: #3B4450;'>
+<font style="font-size: 15px; letter-spacing: 1px; text-transform: uppercase;" size="3" color="3B4450">The Thunder Night Stock</font>
+</td>
+</tr>
+<tr>
+<td align="left" style="padding-top: 5px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 18px; font-size: 13px; color: #777777; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif;">
+<font size="2" color="777777" style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif; font-size: 13px;">
+Inspired by the ever changing lightning on a stormy night
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right'>
+<tbody>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="right" valign="middle" style="padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 0px; font-size: 13px; font-weight: 600; letter-spacing: 1px; line-height: 18px; color: #287cb9;">
+<a style="text-decoration:none;" href="#">
+<font style="font-size: 13px; font-weight: 600; letter-spacing: 1px;" size="3" color="287cb9">Explore&nbsp;<img alt="" src="https://robust.email/files/template_3/images/arr-right.png" align="absmiddle" height="10" border="0" width="10"></font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 100%; max-width: 650px; min-width: 280px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; width: 25px;" width="25">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td align='center' bgcolor="5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 1px; color: transparent; background-color: #5F9EA0">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="160" align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor="5F9EA0" border='0' cellpadding='2' cellspacing='0' align='center' width="160" style="background-color: #5F9EA0; width: 160px; max-width: 160px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;'>
+<table width="100%" bgcolor='fffffd' border='0' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td style="padding-left: 10px; padding-right: 10px; padding-bottom: 6px; padding-top: 6px; font-size: 13px; color: #5f9ea0; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: center;" align='center'>
+<font size="2" color="5f9ea0" style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+Shop &amp; Trends
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; min-width: 60px; max-width: 100%;">
+<tbody>
+<tr>
+<td align='center' bgcolor="#5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 0px; color: transparent;">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" width="20" style="padding-top: 0px; padding-bottom: 0px; padding-left: 10px; padding-right: 10px;">
+<img src="https://robust.email/files/template_3/images/Shop-64.jpg" width="30" height="30" border="0" alt="" />
+</td>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; width: 25px;" width="25">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td align='center' bgcolor="5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 1px; color: transparent; background-color: #5F9EA0">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #fffffd'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%; max-width: 650px; min-width: 280px; background-color: #fffffd'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 600px; background-color: #fffffd'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor="fffffd" border='0' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 100%; max-width: 600px; background-color: #fffffd'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' valign="top" style="text-align: center; vertical-align: top; font-size: 0px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; direction: ltr;">
+
+<div style="width: 100%; max-width: 290px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' bgcolor="ececec">
+<tbody>
+<tr>
+<td align="center" style="padding-top: 30px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<img src="https://robust.email/files/template_3/images/storm-shirt-1.png" width="200" height="200" border="0" style="max-width: 200px; min-width: 200px; width: 100%; display: block; border: none;" alt="" />
+</td>
+</tr>
+<tr>
+<td align='center' valign="bottom" style="padding-top: 20px; padding-bottom: 30px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor="fffffd" align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fffffd; border-radius: 5px; box-shadow: 0 1px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.1)">
+<tbody>
+<tr>
+<td align="center" style="color: #3B4450; font-size: 13px; line-height: 12px; letter-spacing: 0.8px; font-weight: 600; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; padding-bottom: 8px; padding-left: 6px; padding-right: 6px; padding-top: 6px; width: 150px;">
+<font size="2" color="3B4450" style="font-size: 12px; letter-spacing: 0.8px;font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif;font-weight: 600;">Featured &amp; Trending</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td bgcolor="fffffd" align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; background-color: #fffffd' height="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 310px; display: inline-block; vertical-align: top; direction: ltr;">
+<table class="tablemobile" border="0" lang="x-tablem" cellspacing="0" cellpadding="0" align="right" width="100%">
+<tbody>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 0px;" align="left">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="left" style="width: 100%">
+<tbody>
+<tr>
+<td style="padding-top: 0px; padding-left: 0px; padding-right: 10px;padding-bottom: 1px;" align="left">
+<img src="https://robust.email/files/template_3/images/star.png" alt="" border="0" height="12" width="12" style="max-width: 12px; min-width: 12px; width: 12px; display: inline-block; border: none;">
+</td>
+<td style="padding-top: 0px;  padding-left: 0px; padding-right: 10px;padding-bottom: 1px;" align="center">
+<img src="https://robust.email/files/template_3/images/star.png" alt="" border="0" height="12" width="12" style="max-width: 12px; min-width: 12px; width: 12px; display: inline-block; border: none;">
+</td>
+<td style="padding-top: 0px;  padding-left: 0px; padding-right: 10px;padding-bottom: 1px;" align="center">
+<img src="https://robust.email/files/template_3/images/star.png" alt="" border="0" height="12" width="12" style="max-width: 12px; min-width: 12px; width: 12px; display: inline-block; border: none;">
+</td>
+<td style="padding-top: 0px;  padding-left: 0px; padding-right: 10px;padding-bottom: 1px;" align="center">
+<img src="https://robust.email/files/template_3/images/star.png" alt="" border="0" height="12" width="12" style="max-width: 12px; min-width: 12px; width: 12px; display: inline-block; border: none;">
+</td>
+<td style="padding-top: 0px;  padding-left: 0px; padding-right: 10px; padding-bottom: 1px;" align="center">
+<img src="https://robust.email/files/template_3/images/star.png" alt="" border="0" height="12" width="12" style="max-width: 12px; min-width: 12px; width: 12px; display: inline-block; border: none;">
+</td>
+<td style="padding-top: 1px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 18px; font-size: 11px; font-weight: 600; color: #777777; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif" align="right">
+<a href="#" style="text-transform: none; text-decoration: none;">
+<font style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 600; font-size: 11px;" color="777777" size="2">
+Top Selling This Week 
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 0px;" align="left">
+
+<table width="195" class="tablemobile" lang="x-tablem" border="0" cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 10px; padding-left: 0px; padding-right: 5px; text-align: left;" align="left">
+<font style="font-size: 14px;text-transform: uppercase;letter-spacing: 1px;font-weight: 600;" color="5f9ea0" size="2">Men's Dark/White Lines Jacket</font>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right'>
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px;'>
+<table style="background-color: #ebebeb; border-radius: 3px; box-shadow: -2px 2px 1px #cecece" cellspacing="0" cellpadding="0" border="0" bgcolor="ebebeb" align="left">
+<tbody>
+<tr>
+<td style="padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 6px; height: 17px; font-size: 11px; font-weight: 600; letter-spacing: 1px; color: #287cb9;" height="17" align="center">
+<a style="text-decoration:none;" href="#">
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="287cb9">Shop Now&nbsp;<img alt="" src="https://robust.email/files/template_3/images/arr-right-cadet.png" style="Padding-Bottom: 1px;" width="10" border="0" height="10" align="absmiddle"></font></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; font-size: 11px; color: #b4b4b4; letter-spacing: 1px; text-transform: uppercase; line-height: 14px; text-align: left;" align="left">
+<font style="text-transform: uppercase;letter-spacing: 1px;" color="b4b4b4" size="1">Style #KB-MB-2048</font>
+</td>
+</tr>
+<tr>
+<td style="line-height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px; font-size: 13px; color: #777777; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; text-align: left;" align="left">
+<font style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; font-size: 13px;" color="777777" size="2">
+Inspired by the unique, ever-changing organic lines of a lightning rain on a stormy night, this dark thunder alan-weave sweatshirt.
+</font>
+</td>
+</tr>
+<tr>
+<td style="padding-top: 29px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" align="center">
+
+<table class="tablemobile" border="0" lang="x-tablem" cellspacing="0" cellpadding="0" align="center" width="100%">
+<tbody>
+<tr>
+<td align="center" bgcolor="fffffd" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 100%; font-size: 1px; color: transparent; width: 5px; background-color: #fffffd;" width="5">
+&nbsp;
+</td>
+<td bgcolor="19b5c1" style="padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; background-color: #19b5c1; background-image: url('https://robust.email/files/template_3/images/gra-bg-02.jpg'); background-repeat: no-repeat; background-position: center center; background-size: 100% auto; box-shadow: -2px 2px 10px #cccccc; background: linear-gradient(90deg,#19b5c1,#28c88c)" valign="middle" bgcolor="4dd1b9" align="center">
+
+<table class="tablemobile" border="0" lang="x-tablem" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-align: center;" align="center">
+<font style="font-weight: 600; letter-spacing: 1px; font-size: 11px;" color="eaeaea" size="2">
+Price
+</font>
+</td>
+</tr>
+<tr>
+<td style="padding-top: 10px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 22px; font-size: 18px; font-weight: 600; letter-spacing: 1px; text-align: center;" align="center">
+<font style="font-weight: 600; letter-spacing: 1px;" color="ffffff" size="4">
+$ 45
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td align="center" bgcolor="fffffd" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 100%; font-size: 1px; color: transparent; width: 5px; background-color: #fffffd;" width="5">
+&nbsp;
+</td>
+<td style="padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; background-color: #f8f8f8; box-shadow: -2px 2px 10px #cccccc;" valign="middle" bgcolor="f8f8f8" align="center">
+<table class="tablemobile" border="0" lang="x-tablem" cellspacing="0" cellpadding="0" align="center" bgcolor="f8f8f8">
+<tbody>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-align: center;" align="center">
+<font style="font-weight: 600; letter-spacing: 1px; font-size: 11px;" color="333333" size="2">
+Sizes
+</font>
+</td>
+</tr>
+<tr>
+<td style="padding-top: 10px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-align: center;" align="center">
+<font style="font-weight: 600; letter-spacing: 1px; font-size: 11px;" color="777777" size="2">
+S / M / L / XL
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" bgcolor="fffffd" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 100%; font-size: 1px; color: transparent; width: 5px; background-color: #fffffd;" width="5">
+&nbsp;
+</td>
+<td style="padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; box-shadow: -2px 2px 10px #cccccc;" valign="middle" bgcolor="f4f4f4" align="center">
+<table class="tablemobile" border="0" lang="x-tablem" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-align: center;" align="center">
+<font style="font-weight: 600; letter-spacing: 1px; font-size: 11px;" color="333333" size="2">
+Colors
+</font>
+</td>
+</tr>
+<tr>
+<td style="padding-top: 10px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" align="center">
+<table class="tablemobile" border="0" lang="x-tablem" cellspacing="0" cellpadding="0" align="center" bgcolor="fffffd">
+<tbody>
+<tr>
+<td style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; width: 20px; background-color: #800080;" height="20" bgcolor="800080" align="center" width="20">
+&nbsp;
+</td>
+<td style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; width: 5px;" height="20" bgcolor="transparent" align="center" width="5">
+&nbsp;
+</td>
+<td style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; width: 20px; background-color: #a7a7a7;" height="20" bgcolor="a7a7a7" align="center" width="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #fffffd'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%; max-width: 650px; min-width: 280px; background-color: #fffffd'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor="fffffd" border='0' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' valign="top" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; text-align: center; font-size: 0px;">
+
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="290" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' bgcolor="ececec" style="background-color: #ececec;">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<img src="https://robust.email/files/template_3/images/bag-01.png" width="200" height="200" border="0" style="max-width: 200px; min-width: 200px; width: 100%; height: auto; display: block; border: none;" alt="" />
+</td>
+</tr>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="ececec" align="center" background="https://robust.email/files/template_3/images/bg-item.png" style="height: 23px; text-align: center; line-height: 100%; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; background-color: #ececec; background-image: url('https://robust.email/files/template_3/images/bg-item.png'); background-size: 100% 23px; background-repeat: no-repeat;" valign="middle">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:190px;height:23px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/bg-item.png" color="#ececec" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+
+<table class='tablemobile' lang='x-tablem' width="100%" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="4dd1b9" border='0' cellpadding='0' cellspacing='0' align='left' style="background-color: #4dd1b9; border-radius: 3px; height: 23px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 4px; padding-bottom: 4px; padding-left: 6px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;'>
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="ffffff">
+$ 20
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='right' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="ebebeb" cellspacing="0" cellpadding="0" align="right" border="0" style="background-color: #ebebeb; border-radius: 3px; height: 23px; box-shadow: -2px 2px 1px #cecece">
+<tbody>
+<tr>
+<td style="padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;" align="center">
+<a style="text-decoration:none;" href="#">
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="287cb9">Buy now&nbsp;<img alt="" src="https://robust.email/files/template_3/images/arr-right-cadet.png" align="absmiddle" height="10" border="0" width="10" style="Padding-Bottom: 1px;"></font></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align='center' bgcolor="f6f6f6" style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; background-color: #f6f6f6' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6;" align="left">
+<font style="font-size: 13px;text-transform: uppercase;letter-spacing: 1px;font-weight: 600;" size="2" color="5f9ea0">Single Clash Bag</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6; line-height: 20px" align="left">
+<font style="font-size: 13px;color: #777777; font-family: 'PT Sans Caption', 'Open Sans';" size="2">Made from soft fabric of the highest quality.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="290" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right' bgcolor="ececec" style="background-color: #ececec;">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<img src="https://robust.email/files/template_3/images/shoes_02.png" width="200" height="200" border="0" style="max-width: 200px; min-width: 200px; width: 100%; height: auto; display: block; border: none;" alt="" />
+</td>
+</tr>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="ececec" align="center" background="https://robust.email/files/template_3/images/bg-item.png" style="height: 23px; text-align: center; line-height: 100%; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; background-color: #ececec; background-image: url('https://robust.email/files/template_3/images/bg-item.png'); background-size: 100% 23px; background-repeat: no-repeat;" valign="middle">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:190px;height:23px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/bg-item.png" color="#ececec" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+
+<table class='tablemobile' lang='x-tablem' width="100%" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="4dd1b9" border='0' cellpadding='0' cellspacing='0' align='left' style="background-color: #4dd1b9; border-radius: 3px; height: 23px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 4px; padding-bottom: 4px; padding-left: 6px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;'>
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="ffffff">
+$ 51
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='right' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="ebebeb" cellspacing="0" cellpadding="0" align="right" border="0" style="background-color: #ebebeb; border-radius: 3px; height: 23px; box-shadow: -2px 2px 1px #cecece">
+<tbody>
+<tr>
+<td style="padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;" align="center">
+<a style="text-decoration:none;" href="#">
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="287cb9">Buy now&nbsp;<img alt="" src="https://robust.email/files/template_3/images/arr-right-cadet.png" align="absmiddle" height="10" border="0" width="10" style="Padding-Bottom: 1px;"></font></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align='center' bgcolor="f6f6f6" style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; background-color: #f6f6f6' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6;" align="left">
+<font style="font-size: 13px;text-transform: uppercase;letter-spacing: 1px;font-weight: 600;" size="2" color="5f9ea0">Minimalist Shoes</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6; line-height: 20px" align="left">
+<font style="font-size: 13px;color: #777777; font-family: 'PT Sans Caption', 'Open Sans';" size="2">The sleek suede upper comes with a full bootie construction.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #fffffd'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%; max-width: 650px; min-width: 280px; background-color: #fffffd'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; text-align: center; font-size: 0px;">
+
+<div style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="190" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' bgcolor="ececec" style="background-color: #ececec;">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<img src="https://robust.email/files/template_3/images/shoes_03.png" width="167" height="167" border="0" style="max-width: 167px; min-width: 167px; width: 100%; height: auto; display: block; border: none;" alt="" />
+</td>
+</tr>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="ececec" align="center" background="https://robust.email/files/template_3/images/bg-item.png" style="height: 23px; text-align: center; line-height: 100%; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; background-color: #ececec; background-image: url('https://robust.email/files/template_3/images/bg-item.png'); background-size: 100% 23px; background-repeat: no-repeat;" valign="middle">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:190px;height:23px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/bg-item.png" color="#ececec" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+
+<table class='tablemobile' lang='x-tablem' width="100%" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="4dd1b9" border='0' cellpadding='0' cellspacing='0' align='left' style="background-color: #4dd1b9; border-radius: 3px; height: 23px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 4px; padding-bottom: 4px; padding-left: 6px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;'>
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="ffffff">
+$ 66
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='right' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="ebebeb" cellspacing="0" cellpadding="0" align="right" border="0" style="background-color: #ebebeb; border-radius: 3px; height: 23px; box-shadow: -2px 2px 1px #cecece">
+<tbody>
+<tr>
+<td style="padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;" align="center">
+<a style="text-decoration:none;" href="#">
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="287cb9">Buy now&nbsp;<img alt="" src="https://robust.email/files/template_3/images/arr-right-cadet.png" align="absmiddle" height="10" border="0" width="10" style="Padding-Bottom: 1px;"></font></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align='center' bgcolor="f6f6f6" style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; background-color: #f6f6f6' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6;" align="left">
+<font style="font-size: 13px;text-transform: uppercase;letter-spacing: 1px;font-weight: 600;" size="2" color="5f9ea0">Risen II</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6; line-height: 20px" align="left">
+<font style="font-size: 13px;color: #777777; font-family: 'PT Sans Caption', 'Open Sans';" size="2">Made from soft fabric of the highest quality.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="190" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' bgcolor="ececec" style="background-color: #ececec;">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<img src="https://robust.email/files/template_3/images/hoodie_03.png" width="167" height="167" border="0" style="max-width: 167px; min-width: 167px; width: 100%; height: auto; display: block; border: none;" alt="" />
+</td>
+</tr>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="ececec" align="center" background="https://robust.email/files/template_3/images/bg-item.png" style="height: 23px; text-align: center; line-height: 100%; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; background-color: #ececec; background-image: url('https://robust.email/files/template_3/images/bg-item.png'); background-size: 100% 23px; background-repeat: no-repeat;" valign="middle">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:190px;height:23px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/bg-item.png" color="#ececec" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+
+<table class='tablemobile' lang='x-tablem' width="100%" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="4dd1b9" border='0' cellpadding='0' cellspacing='0' align='left' style="background-color: #4dd1b9; border-radius: 3px; height: 23px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 4px; padding-bottom: 4px; padding-left: 6px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;'>
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="ffffff">
+$ 51
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='right' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="ebebeb" cellspacing="0" cellpadding="0" align="right" border="0" style="background-color: #ebebeb; border-radius: 3px; height: 23px; box-shadow: -2px 2px 1px #cecece">
+<tbody>
+<tr>
+<td style="padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;" align="center">
+<a style="text-decoration:none;" href="#">
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="287cb9">Buy now&nbsp;<img alt="" src="https://robust.email/files/template_3/images/arr-right-cadet.png" align="absmiddle" height="10" border="0" width="10" style="Padding-Bottom: 1px;"></font></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align='center' bgcolor="f6f6f6" style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; background-color: #f6f6f6' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6;" align="left">
+<font style="font-size: 13px;text-transform: uppercase;letter-spacing: 1px;font-weight: 600;" size="2" color="5f9ea0">Andrew Hoodie</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6; line-height: 20px" align="left">
+<font style="font-size: 13px;color: #777777; font-family: 'PT Sans Caption', 'Open Sans';" size="2">Made from soft fabric of the highest quality.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 200px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="190" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right' bgcolor="ececec" style="background-color: #ececec;">
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<img src="https://robust.email/files/template_3/images/hoodie_02.png" width="167" height="167" border="0" style="max-width: 167px; min-width: 167px; width: 100%; height: auto; display: block; border: none;" alt="" />
+</td>
+</tr>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="ececec" align="center" background="https://robust.email/files/template_3/images/bg-item.png" style="height: 23px; text-align: center; line-height: 100%; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; background-color: #ececec; background-image: url('https://robust.email/files/template_3/images/bg-item.png'); background-size: 100% 23px; background-repeat: no-repeat;" valign="middle">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:190px;height:23px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/bg-item.png" color="#ececec" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+
+<table class='tablemobile' lang='x-tablem' width="100%" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="4dd1b9" border='0' cellpadding='0' cellspacing='0' align='left' style="background-color: #4dd1b9; border-radius: 3px; height: 23px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 4px; padding-bottom: 4px; padding-left: 6px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;'>
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="ffffff">
+$ 41
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='right' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table bgcolor="ebebeb" cellspacing="0" cellpadding="0" align="right" border="0" style="background-color: #ebebeb; border-radius: 3px; height: 23px; box-shadow: -2px 2px 1px #cecece">
+<tbody>
+<tr>
+<td style="padding-top: 4px; padding-bottom: 4px; padding-left: 8px; padding-right: 6px; line-height: 14px; font-size: 11px; font-weight: 600; letter-spacing: 1px;" align="center">
+<a style="text-decoration:none;" href="#">
+<font style="font-size: 11px; font-weight: 600; letter-spacing: 1px;" size="2" color="287cb9">Buy now&nbsp;<img alt="" src="https://robust.email/files/template_3/images/arr-right-cadet.png" align="absmiddle" height="10" border="0" width="10" style="Padding-Bottom: 1px;"></font></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align='center' bgcolor="f6f6f6" style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px; background-color: #f6f6f6' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6;" align="left">
+<font style="font-size: 13px;text-transform: uppercase;letter-spacing: 1px;font-weight: 600;" size="2" color="5f9ea0">Ellif Franco</font>
+</td>
+</tr>
+<tr>
+<td bgcolor="f6f6f6" style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px;background-color: #f6f6f6; line-height: 20px" align="left">
+<font style="font-size: 13px;color: #777777; font-family: 'PT Sans Caption', 'Open Sans';" size="2">Made from soft fabric of the highest quality.</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #fffffd'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%; max-width: 650px; min-width: 280px; background-color: #fffffd'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='#ECECEC' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 600px; background-color: #ececec;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor="ececec" border='0' width='100%' lang='x-content' cellpadding='2' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px; background-color: #ececec;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align="center" style="padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;">
+<table border='0' bgcolor="ffffff" class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' width="100%" style="background: linear-gradient(90deg,#ececec,#ffffff);">
+<tbody>
+<tr>
+<td align='center' valign="top" style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; font-size: 0px; text-align: center; direction: ltr;'>
+
+<div style="width: 100%; max-width: 228px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' width="100%">
+<tbody>
+<tr>
+<td align='right' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 20px;'>
+<img src="https://robust.email/files/template_3/images/model-r-one.png" width="160" height="auto" border="0" style="max-width: 160px; min-width: 120px; width: 160px; height: auto; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 368px; display: inline-block; vertical-align: top; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left' width="100%">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 35px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 28px; font-size: 22px; color: #3B4450;'>
+<font size="4" color="#3B4450" style="font-size: 22px">
+Starts with fit, <br />Unfolds from there
+</font>
+</td>
+</tr>
+<tr>
+<td style="padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;line-height: 20px; font-size: 14px; color: #3B4450; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; text-align: center;" align="center">
+<font style="font-size: 14px;color: #3B4450; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif;" size="2">
+We make cloths that make the man <br />
+who makes a man out of himself.
+</font>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style="padding-top: 20px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px;">
+<table border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align="center" valign="middle" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: middle;">
+<table bgcolor='68A69A' style="background-color: #68A69A; background-image: url('https://robust.email/files/template_3/images/gra-btn-07.jpg'); background-repeat: repeat-y; box-shadow: -5px 5px 10px #cccccc;" border='0' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td style='padding-left: 15px;padding-right: 15px; padding-bottom: 8px; padding-top: 8px; font-size: 12px; color: #fffffd; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-align: left;' align='center'>
+<a style='text-decoration:none;' href='#'>
+<font size='2' color='fffffd' style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+The shop
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 10px; padding-right: 0px;'>
+<table border='0' bgcolor="4DD1B9" cellpadding='0' cellspacing='0' align='left' style="background-color: #4DD1B9; box-shadow: 5px 5px 10px #f6f6f6;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;'>
+<table bgcolor='fffffd' style="background-color: #fffffd" border='0' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td style='padding-left: 15px;padding-right: 15px; padding-bottom: 6px; padding-top: 6px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #5F9EA0;' align='center'>
+<a style='text-decoration:none;' href='#'>
+<font size='2' color='5f9ea0' style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+New arrivals
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td align='center' style='font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 100%; max-width: 650px; min-width: 280px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; width: 25px;" width="25">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td align='center' bgcolor="5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 1px; color: transparent; background-color: #5F9EA0">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="160" align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor="5F9EA0" border='0' cellpadding='2' cellspacing='0' align='center' width="160" style="background-color: #5F9EA0; width: 160px; max-width: 160px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;'>
+<table width="100%" bgcolor='fffffd' border='0' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td style="padding-left: 10px; padding-right: 10px; padding-bottom: 6px; padding-top: 6px; font-size: 13px; color: #5f9ea0; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: center;" align='center'>
+<font size="2" color="5f9ea0" style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+Blog &amp; Articles
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; min-width: 60px; max-width: 100%;">
+<tbody>
+<tr>
+<td align='center' bgcolor="#5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 0px; color: transparent;">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" width="20" style="padding-top: 0px; padding-bottom: 0px; padding-left: 10px; padding-right: 10px;">
+<img src="https://robust.email/files/template_3/images/icons8-Blog-100.png" width="30" height="30" border="0" alt="" />
+</td>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; width: 25px;" width="25">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td align='center' bgcolor="5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 1px; color: transparent; background-color: #5F9EA0">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%; background-color: #fffffd; max-width: 650px; min-width: 280px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' valign='middle' style='padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' bgcolor='fffffd' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px; width: 100%; background-color: #fffffd'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+
+<table bgcolor="f5f5f5" width="100%" border='0' cellpadding='0' cellspacing='0' align='center' style="max-width: 600px; width: 100%; background-color: #f5f5f5; box-shadow: -2px 2px 10px #cccccc;">
+<tbody>
+<tr>
+<td background="https://robust.email/files/template_3/images/expand-btn-a.png" class="expArticle" style="width: 60px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; background-color: #eaeaea; background-image: url('https://robust.email/files/template_3/images/expand-btn-a.png'); background-repeat: no-repeat; background-position: center center; background-size: 18px 10px;" align="center" valign="middle" width="60" bgcolor="eaeaea">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:18px;height:10px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/expand-btn-a.png" color="#eaeaea" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+<div style="vertical-align: middle; display: inline-block; text-align: center;">
+<a href="#" style="text-decoration: none;">
+<img class="expUp" src="https://robust.email/files/template_3/images/expand-btn-b.png" width="18" height="10" border="0" alt="" />
+</a>
+</div>
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+<td class="article" bgcolor="f5f5f5" align='center' style='padding-top: 20px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px; text-align: center;' valign="top">
+<div style="display: inline-block; vertical-align: top; width: 100%; max-width: 500px;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="max-width: 500px; width: 100%;">
+<tbody>
+<tr>
+<td align='center' valign="top" style='padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px; vertical-align: top;'>
+
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 20px; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; color: #3B4450;'>
+<font style="font-size: 15px; letter-spacing: 1px; text-transform: uppercase;" size="3" color="3B4450">Newly researched thread technology</font>
+</td>
+</tr>
+<tr>
+<td align="left" style="padding-top: 5px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 18px; font-size: 13px; color: #777777; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif;">
+<font size="2" color="777777" style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif; font-size: 13px;">
+This recently founded technology will change the face of clothing
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td align="right" valign="middle" style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 0px; line-height: 100%;">
+<img src="https://robust.email/files/template_3/images/shirt-storm.png" width="40" height="40" border="0" style="max-width: 40px; width: 40px; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="arti" style="overflow: hidden; vertical-align: top; display: inline-block; width: 100%; max-width: 500px;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 500px;">
+<tbody>
+<tr>
+<td align="center" valign="top" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; font-size: 0px; text-align: center; direction: ltr;">
+
+<div style="width: 100%; max-width: 170px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="170" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 20px; line-height: 100%;'>
+<img src="https://robust.email/files/template_3/images/jacket_2.png" width="150" height="150" border="0" style="max-width: 150px; width: 150px; height: auto; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:20px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 330px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="330" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right'>
+<tbody>
+<tr>
+<td align="left" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 22px; font-size: 14px; color: #333333; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif;">
+<font size="2" color="333333" style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif; font-size: 14px;">
+Shot through the heart, and you're to blame! You give love a bad name. I play my card, you play your game.
+<br /><br />
+You give love a bad name.
+</font>
+</td>
+</tr>
+<tr>
+<td style="color: transparent; font-size: 1px; line-height: 20px; height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" valign="middle" align="center" height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="center" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor='cb356b' style="background-color: #cb356b; box-shadow: 5px 5px 10px #cccccc; background: linear-gradient(90deg, #cb356b, #bd3f32);" border='0' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td style='padding-left: 10px;padding-right: 10px; padding-bottom: 6px; padding-top: 6px; font-size: 11px; color: #ffffff; font-weight: 600; letter-spacing: 1px;' align='center'>
+<a style='text-decoration:none;' href='https://www.pinterest.co.uk/pin/180636635031272439/'>
+<font size='2' color='ffffff' style="font-family: 'Montserrat'; font-size: 11px; font-weight: 600; letter-spacing: 1px;">
+Read More
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="color: transparent; font-size: 1px; line-height: 20px; height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" valign="middle" align="center" height="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td style="color: transparent; font-size: 1px; line-height: 20px; height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" valign="middle" align="center" height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+
+<table bgcolor="f5f5f5" width="100%" border='0' cellpadding='0' cellspacing='0' align='center' style="max-width: 600px; width: 100%; background-color: #f5f5f5; box-shadow: -2px 2px 10px #cccccc;">
+<tbody>
+<tr>
+<td background="https://robust.email/files/template_3/images/expand-btn-a.png" class="expArticle" style="width: 60px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; background-color: #eaeaea; background-image: url('https://robust.email/files/template_3/images/expand-btn-a.png'); background-repeat: no-repeat; background-position: center center; background-size: 18px 10px;" align="center" valign="middle" width="60" bgcolor="eaeaea">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:18px;height:10px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/expand-btn-a.png" color="#eaeaea" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+<div style="vertical-align: middle; display: inline-block; text-align: center;">
+<a href="#" style="text-decoration: none;">
+<img class="expUp" src="https://robust.email/files/template_3/images/expand-btn-b.png" width="18" height="10" border="0" alt="" />
+</a>
+</div>
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+<td class="article" bgcolor="f5f5f5" align='center' style='padding-top: 20px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px; text-align: center;' valign="top">
+<div style="display: inline-block; vertical-align: top; width: 100%; max-width: 500px;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="max-width: 500px; width: 100%;">
+<tbody>
+<tr>
+<td align='center' valign="top" style='padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px; vertical-align: top;'>
+
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 20px; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; color: #3B4450;'>
+<font style="font-size: 15px; letter-spacing: 1px; text-transform: uppercase;" size="3" color="3B4450">His dudeness, duder, or el dudorino</font>
+</td>
+</tr>
+<tr>
+<td align="left" style="padding-top: 5px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 18px; font-size: 13px; color: #777777; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif;">
+<font size="2" color="777777" style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif; font-size: 13px;">
+Yeah, well, that's just, like, your opinion, man.
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+<td align="right" valign="middle" style="padding-top: 0px; padding-bottom: 20px; padding-left: 20px; padding-right: 0px; line-height: 100%;">
+<img src="https://robust.email/files/template_3/images/icons8-Lightning-Bolt-96.png" width="40" height="40" border="0" style="max-width: 40px; width: 40px; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="arti" style="overflow: hidden; vertical-align: top; display: inline-block; width: 100%; max-width: 500px;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="max-width: 500px; width: 100%;">
+<tbody>
+<tr>
+<td align="center" valign="top" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; font-size: 0px; text-align: center; direction: ltr;">
+
+<div style="width: 100%; max-width: 170px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="170" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 20px; line-height: 100%;'>
+<img src="https://robust.email/files/template_3/images/shoes_03.png" width="150" height="150" border="0" style="max-width: 150px; width: 150px; height: auto; display: block; border: none;" alt="" />
+</td>
+</tr>
+<tr>
+<td style="color: transparent; font-size: 1px; line-height: 20px; height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" valign="middle" align="center" height="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:20px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 330px; display: inline-block; vertical-align: top; direction: ltr;">
+<table width="330" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right'>
+<tbody>
+<tr>
+<td align="left" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 22px; font-size: 14px; color: #333333; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif;">
+<font size="2" color="333333" style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', 'Noto Sans', sans-serif; font-size: 14px;">
+Shot through the heart, and you're to blame! You give love a bad name. I play my card, you play your game.
+<br /><br />
+You give love a bad name.
+</font>
+</td>
+</tr>
+<tr>
+<td style="color: transparent; font-size: 1px; line-height: 20px; height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" valign="middle" align="center" height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="center" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor='134e5e' border='0' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td style='padding-left: 10px;padding-right: 10px; padding-bottom: 6px; padding-top: 6px; font-size: 11px; color: #ffffff; font-weight: 600; letter-spacing: 1px;' align='center'>
+<a style='text-decoration:none;' href='https://www.pinterest.co.uk/pin/180636635031272439/'>
+<font size='2' color='ffffff' style="font-family: 'Montserrat'; font-size: 11px; font-weight: 600; letter-spacing: 1px;">
+Read More
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style="color: transparent; font-size: 1px; line-height: 20px; height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" valign="middle" align="center" height="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td style="color: transparent; font-size: 1px; line-height: 35px; height: 35px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" valign="middle" align="center" height="35">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td valign='top' align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; font-size: 0px; text-align: center; direction: ltr;'>
+
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 20px; line-height: 26px; font-size: 24px; color: #3B4450; text-align: left;'>
+<font size="4" color="#3B4450">
+Double your email campaigns conversion rates with this design
+</font>
+</td>
+</tr>
+<tr>
+<td align="center" valign="middle" style="padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: middle;">
+<table bgcolor='68A69A' class="btn-call" style="background-color: #68A69A; background-image: url('https://robust.email/files/template_3/images/gra-btn-02.jpg'); background-repeat: repeat-y; box-shadow: -5px 5px 10px #cccccc;" border='0' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td style='padding-left: 15px;padding-right: 15px; padding-bottom: 8px; padding-top: 8px; font-size: 12px; color: #fffffd; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-align: left;' align='center'>
+<a style='text-decoration:none;' href='#'>
+<font size='2' color='fffffd' style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+See it in Action
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" width="50%" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right'>
+<tbody>
+<tr>
+<td align='left' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;line-height: 24px; font-size: 16px; color: #3B4451; font-family: 'Muli', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-align: left;">
+<font size="3" color="#3B4451" style="font-family: 'Muli', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif;">
+<a href="#" style="text-decoration: none; color: blue; border-bottom: 1px solid blue; font-weight: 600">Progressive disclosure</a> improves usability by presenting only the minimum data required for the task at hand. This ensures user's focus and conversions.
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' border='0' width='100%' lang='x-main' cellpadding='0' cellspacing='0' align='center' class='mainCont' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt; width: 100%; max-width: 650px; min-width: 280px;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center'>
+<tbody>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; width: 25px;" width="25">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td align='center' bgcolor="5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 1px; color: transparent; background-color: #5F9EA0">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width="160" align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table bgcolor="5F9EA0" border='0' cellpadding='2' cellspacing='0' align='center' width="160" style="background-color: #5F9EA0; width: 160px; max-width: 160px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 2px; padding-bottom: 2px; padding-left: 2px; padding-right: 2px;'>
+<table width="100%" bgcolor='fffffd' border='0' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td style="padding-left: 10px; padding-right: 10px; padding-bottom: 6px; padding-top: 6px; font-size: 13px; color: #5f9ea0; font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: center;" align='center'>
+<font size="2" color="5f9ea0" style="font-family: 'PT Sans Caption', 'Open Sans', 'Source Sans Pro', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+Video &amp; Gfxs
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; min-width: 60px; max-width: 100%;">
+<tbody>
+<tr>
+<td align='center' bgcolor="#5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 0px; color: transparent;">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td align="center" width="20" style="padding-top: 0px; padding-bottom: 0px; padding-left: 10px; padding-right: 10px;">
+<img src="https://robust.email/files/template_3/images/icons8-play-button.jpg" width="30" height="30" border="0" alt="" />
+</td>
+<td align='center' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; width: 25px;" width="25">
+<table width="100%" border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="width: 100%; max-width: 100%">
+<tbody>
+<tr>
+<td align='center' bgcolor="5F9EA0" height="2" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 2px; line-height: 2px; font-size: 1px; color: transparent; background-color: #5F9EA0">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; vertical-align: top; font-size: 0; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 35px; line-height: 35px;' height="35">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' align='center' border='0' cellpadding='0' cellspacing='0' class='mainCont' lang='x-main' width='100%' style='border-collapse: collapse; max-width: 650px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #fffffd;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' valign='middle' style='padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' bgcolor='fffffd' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px; width: 100%; background-color: #fffffd; border-top: 3px solid #f5f5f5; border-left: 3px solid #f5f5f5; border-right: 3px solid #f5f5f5;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="center" align="middle" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 100%;">
+<img src="https://robust.email/files/template_3/images/shoes-small.png" width="120" height="auto" style="max-width: 200px; min-width: 64px; width: 120px; display: block;" border="0" alt="" />
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td valign='middle' align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; line-height: 30px; font-size: 22px; color: #3B4450; text-align: center;'>
+<font style="font-size: 22px" size="4" color="#3B4450">
+Bike Lanes by Casey Neistat
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='f5f5f5' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #f5f5f5;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='f5f5f5' align='center' border='0' cellpadding='0' cellspacing='0' class='mainCont' lang='x-main' style='border-collapse: collapse; max-width: 650px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f5f5f5;' width='100%'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' valign='middle' style='padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='f5f5f5' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' bgcolor='f5f5f5' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px;">
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align="center" valign="top" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top;">
+
+<table border='0' bgcolor="21bfa6" background="https://robust.email/files/template_3/images/gra-video-bg.jpg" class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='center' style="background-color: #21bfa6; background-image: url('https://robust.email/files/template_3/images/gra-video-bg.jpg'); background-repeat: no-repeat;">
+<tbody>
+<tr>
+<td align='center' valign="top" style='padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; vertical-align: top'>
+
+<table align="center" bgcolor="21bfa6" cellpadding="0" cellspacing="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;  width: 100%; background-color: #21bfa6; max-width: 500px;" width="100%">
+<tbody>
+<tr>
+<td align="center" editable="video" mc:edit="video_block" background="https://robust.email/files/template_3/images/video-poster-01.jpg" style="height: 281px; text-align: center;line-height: 100%; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; background-image: url('https://robust.email/files/template_3/images/video-poster-01.jpg'); background-repeat: no-repeat;" valign="middle">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:500px;height:281px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/video-poster-01.jpg" color="#21bfa6" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+
+<!--[if !mso]><!-->
+<video controls="controls" poster="https://robust.email/files/template_3/images/video-poster-01.jpg" width="100%">
+<source src="https://robust.email/files/template_3/images/bike_lanes.mp4" style="padding-top: 55.25%;" type="video/mp4" video-type="mp4">
+<source src="https://robust.email/files/template_3/images/bike_lanes.ogg" type="video/ogg" video-type="ogg">
+<!--<![endif]-->
+<a href="#" style="color: inherit; text-decoration: none;"><img border="0" height="281" mc:edit="video_main" src="https://robust.email/files/template_3/images/video-poster-01.jpg" style="height: 282px; max-width: 500px; min-width: 280px; width: 100%; z-index: 9999;" alt="" width="500" height="282" /></a>
+<!--[if !mso]><!-->
+</video>
+<!--<![endif]-->
+
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='fffffd' align='center' border='0' cellpadding='0' cellspacing='0' class='mainCont' lang='x-main' width='100%' style='border-collapse: collapse; max-width: 650px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #fffffd;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' valign='middle' style='padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='fffffd' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px; background-color: #fffffd;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' bgcolor='fffffd' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px; width: 100%; background-color: #fffffd'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td valign='top' align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; font-size: 0px; text-align: center;'>
+
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='left' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 20px; line-height: 26px; font-size: 24px; color: #3B4450; text-align: left;'>
+<font size="4" color="#3B4450">
+Newly researched and improved video embeddeding technique implemented!
+</font>
+</td>
+</tr>
+<tr>
+<td align="center" valign="middle" style="padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: middle;">
+<table bgcolor='68A69A' class="btn-call" style="background-color: #68A69A; background-image: url('https://robust.email/files/template_3/images/gra-btn-01.jpg'); background-repeat: repeat-y; box-shadow: -5px 5px 10px #cccccc;" border='0' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td style='padding-left: 15px;padding-right: 15px; padding-bottom: 8px; padding-top: 8px; font-size: 12px; color: #fffffd; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; text-align: left;' align='center'>
+<a style='text-decoration:none;' href='#'>
+<font size='2' color='fffffd' style="font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+Explore
+</font>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" width="50%" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right'>
+<tbody>
+<tr>
+<td align='left' style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;line-height: 24px; font-size: 16px; color: #3B4451; font-family: 'Muli', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-align: left;">
+<font size="3" color="#3B4451" style="font-family: 'Muli', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif;">
+<a href="#" style="text-decoration: none; color: blue; border-bottom: 1px solid blue; font-weight: 600">Kinetic Video</a> is no ordinary video email, we've embedded the most advanced in-email video technique that exists today.
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='F4F5F9' border='0' width='650' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px; background-color: #F4F5F9;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table bgcolor='F4F5F9' align='center' border='0' cellpadding='0' cellspacing='0' class='mainCont' lang='x-main' style='border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #F4F5F9; max-width: 650px; min-width: 280px;' width='100%'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align="center" bgcolor="fffffd" style="line-height: 100%; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; background-color: #fffffd; line-height: 100%;">
+<img src="https://robust.email/files/template_3/images/separator-10.png" width="650" height="35" border="0" style="width: 100%; max-width: 650px; min-width: 240px; height: auto; display: block; border: none;" alt=" " />
+</td>
+</tr>
+<tr>
+<td align='center' valign='middle' style='padding-top: 0px; padding-bottom: 0px; padding-left: 20px; padding-right: 20px;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table bgcolor='F4F5F9' border='0' width='600' cellpadding='0' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px; background-color: #F4F5F9;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table border='0' bgcolor='F4F5F9' width='100%' lang='x-content' cellpadding='0' cellspacing='0' align='center' class='contenttable' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;max-width: 600px; width: 100%; background-color: #F4F5F9;'>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='center' valign="bottom" style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: bottom; font-size: 0px; text-align: center; direction: ltr;'>
+
+<!--[if (gte mso 9)|(IE)]>
+<table border='0' cellpadding='0' cellspacing='0' align='center' width="600" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; Margin: 0; Padding: 0;'>
+<![endif]-->
+
+<div style="width: 100%; max-width: 250px; display: inline-block; vertical-align: bottom; direction: ltr;">
+<table align="left" cellpadding="0" cellspacing="0" class="tablemobile" lang="x-tablem" height="30">
+<tbody>
+<tr>
+<td align="center" style="padding-bottom: 15px; padding-left: 0px; padding-right: 0px; padding-top: 0px; vertical-align: bottom;" valign="bottom">
+<font color="333333" size="2" style="font-size: 15px;text-transform: uppercase;font-family: 'PT Sans Caption';font-weight: 600;color: #333333;letter-spacing: 1px;">
+Join the conversation
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="bottom" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: bottom;">
+<![endif]-->
+<div style="width: 100%; max-width: 350px; display: inline-block; vertical-align: bottom; direction: ltr;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right'>
+<tbody>
+<tr>
+<td align='center' editable="social" style='padding-top: 0px; padding-bottom: 15px; padding-left: 0px; padding-right: 0px; font-size: 13px; color: #333333; line-height: 15px; text-align: center;'>
+
+<a href="#" style="color: inherit; text-decoration: none;"><img alt="Facebook" src="https://robust.email/files/template_3/images/icons8-Facebook-48.png" style="display: inline-block;" width="30" height="30" border="0"></a>&nbsp;&nbsp;&nbsp;<a href="#" style="color: inherit; text-decoration: none;"><img alt="GooglePlus" src="https://robust.email/files/template_3/images/icons8-Google-Plus-48.png" style="display: inline-block;" width="30" height="30" border="0"></a>&nbsp;&nbsp;&nbsp;<a href="#" style="color: inherit; text-decoration: none;"><img alt="Instagram" src="https://robust.email/files/template_3/images/icons8-Instagram-48.png" style="display: inline-block;" width="30" height="30" border="0"></a>&nbsp;&nbsp;&nbsp;<a href="#" style="color: inherit; text-decoration: none;"><img alt="LinkedIn" src="https://robust.email/files/template_3/images/icons8-LinkedIn-48.png" style="display: inline-block;" width="30" height="30" border="0"></a>&nbsp;  &nbsp;<a href="#" style="color: inherit; text-decoration: none;"><img alt="Twitter" src="https://robust.email/files/template_3/images/icons8-Twitter-48.png" style="display: inline-block;" width="30" height="30" border="0"></a>&nbsp;&nbsp;&nbsp;<a href="#" style="color: inherit; text-decoration: none;"><img alt="YouTube" src="https://robust.email/files/template_3/images/icons8-YouTube-48.png" style="display: inline-block;" width="30" height="30" border="0"></a>&nbsp;&nbsp;&nbsp;<a href="#" style="color: inherit; text-decoration: none;"><img alt="Ello" src="https://robust.email/files/template_3/images/ello-logo.png" style="display: inline-block;" width="30" height="30" border="0"></a>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</tbody>
+</table>
+<![endif]-->
+
+</td>
+</tr>
+<tr>
+<td align="center" bgcolor="21BFA6" background="https://robust.email/files/template_3/images/gra-bar-01.jpg" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 5px; line-height: 5px; font-size: 1px; color: transparent; background-color: #21BFA6; background-image: url('https://robust.email/files/template_3/images/gra-bar-01.jpg'); background-repeat: repeat-y;" height="5">
+<!--[if gte mso 9]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:5px;">
+<v:fill type="tile" src="https://robust.email/files/template_3/images/gra-bar-01.jpg" color="#21BFA6" />
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+<div style="vertical-align: middle; text-align: center;">
+&nbsp;
+</div>
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 20px; line-height: 20px;' height="20">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="center" valign="top" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; vertical-align: top; font-size: 0px; text-align: center; direction: rtl;">
+
+<!--[if (gte mso 9)|(IE)]>
+<table border='0' cellpadding='0' cellspacing='0' align='center' width="600" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;">
+<tbody>
+<tr>
+<td align='center' style='padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;'>
+<![endif]-->
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top; direction: rtl;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='right'>
+<tbody>
+<tr>
+<td align='center' valign="middle" style='padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px; line-height: 100%;'>
+<img src="https://robust.email/files/template_3/images/kinetic-logo.png" width="60" height="16" border="0" style="width: 60px; max-width: 60px; min-width: 60px; display: block; border: none;" alt="" />
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;padding-right:0px;padding-left:0px; vertical-align: top;">
+<![endif]-->
+<div style="width: 100%; max-width: 300px; display: inline-block; vertical-align: top; direction: rtl;">
+<table border='0' class='tablemobile' lang='x-tablem' cellpadding='0' cellspacing='0' align='left'>
+<tbody>
+<tr>
+<td align='center' style="padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 0px; font-size: 12px; color: #000000; font-family: 'PT Sans Caption','Montserrat', 'Noto Sans', 'Open Sans',sans-serif; text-align: center;">
+<font color="#000000" size="2" style="font-family: 'PT Sans Caption','Montserrat', 'Noto Sans', 'Open Sans',sans-serif; font-size: 12px; text-size-adjust: 100%;"><a href="#" style="text-decoration: none; color: inherit;">Contact&nbsp;Us</a>&nbsp;&nbsp;&nbsp;<font color="#e1e1e1">&#124;</font>&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none; color: inherit;">Delivery</a>&nbsp;&nbsp;&nbsp;<font color="#e1e1e1">&#124;</font>&nbsp; &nbsp;<a href="#" style="text-decoration: none; color: inherit;">Returns</a>&nbsp;&nbsp;&nbsp;<font color="#e1e1e1">&#124;</font>&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none; color: inherit; border-bottom: 2px solid #777777;">Gift&nbsp;Cards</a>
+</font>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</tbody>
+</table>
+<![endif]-->
+
+</td>
+</tr>
+<tr>
+<td align="center" bgcolor="e1e1e1" style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 1px; color: transparent; background-color: #e1e1e1; height: 1px; line-height: 1px; border: none;" height="1">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align='left' style="padding-top: 20px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; font-size: 13px; color: #333333; line-height: 20px; font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif; text-align: left;">
+<font size="2" color="333333" style="font-family: 'PT Sans Caption', 'Noto Sans', 'Open Sans', 'Source Sans Pro', sans-serif;">
+P. Sherman, <br />42 Wallaby Way, Sydney
+</font>
+<br /><br />
+<font size="2" color="777777" style="font-family: 'PT Sans Caption'">
+We think you're great, but if you need a little time apart from us you can <a href="robustunsub" style="text-decoration: none;">Unsubscribe</a>
+<br /><br />
+&copy; Copyrights Robust Designs 2017
+</font>
+</td>
+</tr>
+<tr>
+<td align='center' style='text-align: center; font-size: 1px; color: transparent; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; height: 30px; line-height: 30px;' height="30">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--Shadow End-->
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<!--[if (gte mso 9)|(IE)]>
+<table border='0' width='650' cellpadding='20' cellspacing='0' align='center' style='border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 650px;'>
+<![endif]-->
+<!--[if !mso]><!-->
+<table align="center" border="0" cellpadding="20" cellspacing="0" class="contenttable" lang="x-content" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; max-width: 650px; min-width: 280px;" width="100%">
+<!--<![endif]-->
+<tbody>
+<tr>
+<td style="color: transparent; font-size: 1px; line-height: 20px; height: 20px; padding-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" valign="middle" align="center" height="20">
+&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+
+<!--Gmail Font Size Fix Start-->
+<div style="display:none; white-space:nowrap; font:15px courier; color:#eaeaea;">
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+</div>
+<!--Gmail Font Size Fix End-->
+<!--BackgroundColor Fix End-->
+</td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>
