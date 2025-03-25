@@ -1,4 +1,4 @@
-<?php
+app.obbak.es/<?php
 if (! defined('BASEPATH'))
     exit('No direct script access allowed');
 
@@ -88,13 +88,89 @@ function notificaciones($modo = '0')
 }
 
 
+    // Removed duplicate function declaration to avoid redeclaration error.
+
+
+    /**
+     * Muestra la vista de los avisos
+     */
+function avisos($modo = '0')
+{
+    $this->load->model('clientes_model');
+    $this->load->model('ofertas_model');
+    $this->load->model('medios_model');
+
+    $avisos = [];
+    $id_cliente = $this->session->userdata('id_cliente'); // Obtener ID del cliente de sesión
+
+    if (!$id_cliente) {
+        show_error('Cliente no identificado', 403);
+        return;
+    }
+
+    $filtro['id_cliente'] = $id_cliente; // Filtrar solo por id_cliente
+
+    if ($modo === '0') {
+        $cliente = $this->clientes_model->getClienteAdminavisos($id_cliente);
+        if ($cliente) {
+            $avisos = [
+                'newsletter' => (int) $cliente->newsletter,
+                'notifica_oferta_nueva' => (int) $cliente->notifica_oferta_nueva,
+                'cliente' => $id_cliente
+            ];
+        }
+    } elseif ($modo === '1') {
+        // Asegurar que los valores sean definidos y sean enteros
+        $notificaciones = [
+            'newsletter' => (int) $this->input->post('newsletter'),
+            'notifica_oferta_nueva' => (int) $this->input->post('notifica_oferta_nueva'),
+            'cliente' => $id_cliente
+        ];
+
+        // Validar que $notificaciones sea un array válido antes de actualizar
+        if (!empty($notificaciones)) {
+            $this->clientes_model->updateClienteNotificaciones($id_cliente, $notificaciones);
+        }
+    }
+
+    // Obtener datos relacionados con el cliente
+    $numOfertas = $this->ofertas_model->getNumOfertas($filtro);
+    $numInscripciones = $this->ofertas_model->getNumInscripciones($filtro);
+    $inscripciones_total = $this->ofertas_model->getInscripcionesimpor($filtro);
+    $inscripciones = $this->ofertas_model->getInscripcionescli($filtro);
+    $renta_med = $this->ofertas_model->getInscripcionesrenta($filtro);
+	$cliente = $this->clientes_model->getClienteAdmin($this->session->userdata('id_cliente'));
+
+    $notificaciones['recibir_todas'] = !($notificaciones['newsletter'] == 0 || $notificaciones['notifica_oferta_nueva'] == 0);
+
+    // Cargar vista con datos
+    $data = [
+        'page' => "anunciantes/notificaciones",
+        'title' => "Notificaciones",
+        'h1' => 'Notificaciones',
+        'opc' => 'perfil',
+        'notificaciones' => $notificaciones,
+        'numOfertas' => $numOfertas,
+        'inscripciones_total' => $inscripciones_total,
+        'tipos_medio' => $this->ofertas_model->getAnuncianteTiposMedio(),
+        'numInscripciones' => $numInscripciones,
+        'renta_med' => $renta_med,
+        'inscripciones' => $this->ofertas_model->getInscripciones($filtro),
+		'cliente' =>$cliente
+    ];
+
+    $this->load->vars($data);
+    $this->load->view('default_anunciantes');
+}
+
+
     /**
      * Desinscribe al anunciante logueado de la oferta especificada
      *
      * @param integer $id_oferta
      *            Id de la oferta de la que desinscribir al anunciante
      */
-    function desinscribirseOferta($id_oferta)
+     function desinscribirseOferta($id_oferta)
     {
         $this->load->model('ofertas_model');
 
@@ -535,6 +611,7 @@ function notificaciones($modo = '0')
 		$games = $this->ofertas_model->getOfertainver($id_oferta);
 		$numOfertas = $this->ofertas_model->getNumOfertas($this->session->userdata('id_cliente'));
 		$numInscripciones = $this->ofertas_model->getNumInscripcionesAnunciantes2($this->session->userdata('id_cliente'));
+        $actividades = $this->ofertas_model->getNumactividadAnunciantes($this->session->userdata('id_cliente'));
       
         if ($oferta != false) {
 
@@ -544,6 +621,7 @@ function notificaciones($modo = '0')
 			$data['games'] = $games;
 			$data['numOfertas'] = $numOfertas;
 			$data['numInscripciones'] = $numInscripciones;
+            $data['actividades'] = $actividades;
 			$data['inscripciones'] = $inscripciones;
 			$data['inscripciones_total'] = $inscripciones_total;
             $data['perfiles'] = $this->medios_model->getPerfiles($oferta->id_tipo_medio);
@@ -728,6 +806,8 @@ function notificaciones($modo = '0')
 		$movimientos = $this->ofertas_model->getMovimientosPorCliente($filtro);
 		$saldo = $this->ofertas_model->getSaldoPorCliente($filtro);
 		$retiradas = $this->ofertas_model->getretiradaPorCliente($filtro);
+        $avisos = $this->clientes_model->getClienteAdminavisos($filtro);
+        $actividades = $this->ofertas_model->getNumactividadAnunciantes($filtro);
 
 
         // Creamos el módulo de paginación para las ofertas
@@ -756,6 +836,8 @@ function notificaciones($modo = '0')
 		$data['saldo'] = $saldo;
 		$data['inscripciones'] = $this->ofertas_model->getInscripciones($filtro);
 		$data['retiradas'] = $retiradas;
+        $data['avisos'] = $retiradas;
+        $data['actividades'] = $actividades;
 
         
  
@@ -810,6 +892,8 @@ function notificaciones($modo = '0')
 		$movimientos = $this->ofertas_model->getMovimientosPorCliente($filtro);
 		$saldo = $this->ofertas_model->getSaldoPorCliente($filtro);
 		$retiradas = $this->ofertas_model->getretiradaPorCliente($filtro);
+        $avisos = $this->clientes_model->getClienteAdminavisos($filtro);
+        $actividades = $this->ofertas_model->getNumactividadAnunciantes($filtro);
 
 
         // Creamos el módulo de paginación para las ofertas
@@ -838,6 +922,8 @@ function notificaciones($modo = '0')
 		$data['saldo'] = $saldo;
 		$data['inscripciones'] = $this->ofertas_model->getInscripciones($filtro);
 		$data['retiradas'] = $retiradas;
+        $data['avisos'] = $retiradas;
+        $data['actividades'] = $actividades;
 
         
  
@@ -1210,6 +1296,8 @@ function imagenUsuario()
 		$filtro['id_cliente'] = $cliente->id_cliente;
 		$numOfertas = $this->ofertas_model->getNumOfertas($filtro);
 		$numInscripciones = $this->ofertas_model->getNumInscripciones($filtro);
+        $actividades = $this->ofertas_model->getNumactividadAnunciantes($this->session->userdata('id_cliente'));
+        $avisos = $this->clientes_model->getClienteAdminavisos($this->session->userdata('id_cliente'));
 
         if ($modo != 0) {
             $this->form_validation->set_rules('nombre', 'Empresa', 'trim|required');
@@ -1259,6 +1347,8 @@ function imagenUsuario()
 		$data['numOfertas'] = $numOfertas;
 		$data['numInscripciones'] = $numInscripciones;
         $data['cliente'] = $cliente;
+        $data['actividades'] = $actividades;
+        $data['avisos'] = $avisos;
         $data['page'] = "anunciantes/perfil_empresa";
 
         $data['h1'] = 'Perfil Empresa';

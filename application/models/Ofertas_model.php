@@ -461,6 +461,29 @@ function getInscripcionesrenta($filtro)
 }
 
     /**
+     * Obtiene el numero total de actividades  obtenido en la funcion getactividadesAnunciantes
+     *
+     * @param array $filtro
+     *            Opciones de filtrado: false si se utiliza el filtro usado en getInscripcionesAnunciantes o array(palabra, agencia, estado)
+     * @return integer Numero total de anunciantes obtenido
+     */
+    public function getNumactividadAnunciantes($id_cliente = null) {
+        if (!empty($id_cliente)) {
+            if (is_array($id_cliente)) {
+                // Si es un array, usamos where_in
+                $this->db->where_in('id_cliente', $id_cliente);
+            } elseif (is_numeric($id_cliente)) {
+                // Si es un ID único, usamos where normal
+                $this->db->where('id_cliente', $id_cliente);
+            } else {
+                log_message('error', 'ID de cliente inválido en getNumactividadAnunciantes: ' . print_r($id_cliente, true));
+                return 0;
+            }
+        }
+        return $this->db->count_all_results('actividad');
+    }
+
+    /**
      * Obtiene el numero total de ofertas segun el filtro de la funcion getOfertas
      *
      * @param array $filtro

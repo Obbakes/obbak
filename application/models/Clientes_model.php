@@ -235,6 +235,40 @@ class Clientes_model extends CI_Model
         $cliente->permisos_medios = $this->getMediosConPermisoByIdCliente($id_cliente);
         return $query->row();
     }
+
+    public function getClienteAdminavisos($id_cliente)
+    {
+        // Validación para asegurar que $id_cliente es válido
+        if (!is_numeric($id_cliente)) {
+            log_message('error', 'ID de cliente no válido: ' . print_r($id_cliente, true));
+            return false;
+        }
+    
+        // Obtener información del cliente y sus avisos
+        $this->db->select('
+            cli.id_cliente, cli.nombre, cli.email, cli.nombre_comercial, cli.nombre_contacto, 
+            cli.Fecha_nacimiento, cli.apellidos_contacto, cli.telefono, cli.direccion, 
+            cli.cp, cli.id_provincia, cli.id_sector, cli.newsletter, cli.id_usuario, 
+            usu.nick, cli.meses_interesado, cli.medios_interesado, cli.imagen, 
+            cli.cif, cli.poblacion, usu.fecha_registro, usu.estado, cli.web, 
+            avi.id_oferta, avi.concepto
+        ');
+        $this->db->from('clientes cli');
+        $this->db->join('usuarios usu', 'usu.id_usuario = cli.id_usuario', 'left');
+        $this->db->join('actividad avi', 'cli.id_cliente = avi.id_cliente', 'left');
+        $this->db->where('cli.id_cliente', $id_cliente);
+    
+        $query = $this->db->get();
+    
+        if ($query->num_rows() == 0) {
+            return false;
+        }
+    
+        // Devolver los resultados como un array de avisos
+        $cliente = $query->result();
+        return $cliente;
+    }
+    
 	
 	public function getClienteAdmininver($id_usuario )
     {
