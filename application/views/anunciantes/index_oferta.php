@@ -111,22 +111,19 @@
                                 <!-- Nav tabs -->
 									<ul class="nav nav-tabs flex-wrap w-100 text-center customers-nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item flex-fill border-top" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link active" data-bs-toggle="tab" data-bs-target="#overviewTab" role="tab">Overview</a>
+                                        <a href="javascript:void(0);" class="nav-link active" data-bs-toggle="tab" data-bs-target="#overviewTab" role="tab">Descripción</a>
                                     </li>
                                     <li class="nav-item flex-fill border-top" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#billingTab" role="tab">Billing</a>
+                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#billingTab" role="tab">Estadisticas</a>
                                     </li>
                                     <li class="nav-item flex-fill border-top" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#activityTab" role="tab">Activity</a>
+                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#activityTab" role="tab">Actividad</a>
                                     </li>
                                     <li class="nav-item flex-fill border-top" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#notificationsTab" role="tab">Notifications</a>
+                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#notificationsTab" role="tab">Notificaciones</a>
                                     </li>
                                     <li class="nav-item flex-fill border-top" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#connectionTab" role="tab">Connection</a>
-                                    </li>
-                                    <li class="nav-item flex-fill border-top" role="presentation">
-                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#securityTab" role="tab">Security</a>
+                                        <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#connectionTab" role="tab">Documentación</a>
                                     </li>
                                 </ul>
 								</div>
@@ -145,26 +142,6 @@
 										<div class="card stretch stretch-full">
                             <div class="card-header">
                                 <h5 class="card-title">Project Report</h5>
-                                <div class="card-header-action">
-                                    <div class="card-header-btn">
-                                        <div data-bs-toggle="tooltip" title="Delete">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Refresh">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"> </a>
-                                        </div>
-                                        <div data-bs-toggle="tooltip" title="Maximize/Minimize">
-                                            <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"> </a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
-                                            <div data-bs-toggle="tooltip" title="Options">
-                                                <i class="feather-more-vertical"></i>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                             <div class="card-body custom-card-action">
                                 <div id="project-statistics-chart"></div>
@@ -176,7 +153,7 @@
                                 <div class="tab-pane fade" id="activityTab" role="tabpanel">
                                     <div class="recent-activity p-4 pb-0">
                                         <div class="mb-4 pb-2 d-flex justify-content-between">
-                                            <h5 class="fw-bold">Recent Activity:</h5>
+                                            <h5 class="fw-bold">Actividad</h5>
                                             <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">View Alls</a>
                                         </div>
                                         <ul class="list-unstyled activity-feed">
@@ -308,104 +285,6 @@
                                         </a>
                                     </div>
                                     <hr>
-                                    <div class="logs-history mb-0">
-                                        <div class="px-4 mb-4 d-flex justify-content-between">
-                                            <h5 class="fw-bold">Logs History</h5>
-                                            <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">View Alls</a>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class="text-dark text-center border-top">
-                                                    <tr>
-                                                        <th class="text-start ps-4">Browser</th>
-                                                        <th>IP</th>
-                                                        <th>Time</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="text-center">
-                                                    <tr>
-                                                        <td class="fw-medium text-dark text-start ps-4">Chrome on Window</td>
-                                                        <td><span class="text-muted">192.149.122.128</span></td>
-                                                        <td>
-                                                            <span class="text-muted"> <span class="d-none d-sm-inline-block">11:34 PM</span></span>
-                                                        </td>
-                                                        <td><i class="feather feather-check-circle text-success"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fw-medium text-dark text-start ps-4">Mozilla on Window</td>
-                                                        <td><span class="text-muted">186.188.154.225</span></td>
-                                                        <td>
-                                                            <span class="text-muted">Nov 20, 2023 <span class="d-none d-sm-inline-block">10:34 PM</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <a href="javascript:void(0);"><i class="feather feather-x text-danger"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fw-medium text-dark text-start ps-4">Chrome on iMac</td>
-                                                        <td><span class="text-muted">192.149.122.128</span></td>
-                                                        <td>
-                                                            <span class="text-muted">Oct 23, 2023 <span class="d-none d-sm-inline-block">04:16 PM</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <a href="javascript:void(0);"><i class="feather feather-x text-danger"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fw-medium text-dark text-start ps-4">Mozilla on Window</td>
-                                                        <td><span class="text-muted">186.188.154.225</span></td>
-                                                        <td>
-                                                            <span class="text-muted">Nov 20, 2023 <span class="d-none d-sm-inline-block">10:34 PM</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <a href="javascript:void(0);"><i class="feather feather-x text-danger"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fw-medium text-dark text-start ps-4">Chrome on Window</td>
-                                                        <td><span class="text-muted">192.149.122.128</span></td>
-                                                        <td>
-                                                            <span class="text-muted">Oct 23, 2023 <span class="d-none d-sm-inline-block">04:16 PM</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <a href="javascript:void(0);"><i class="feather feather-x text-danger"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fw-medium text-dark text-start ps-4">Chrome on iMac</td>
-                                                        <td><span class="text-muted">192.149.122.128</span></td>
-                                                        <td>
-                                                            <span class="text-muted">Oct 15, 2023 <span class="d-none d-sm-inline-block">11:41 PM</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <a href="javascript:void(0);"><i class="feather feather-x text-danger"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fw-medium text-dark text-start ps-4">Mozilla on Window</td>
-                                                        <td><span class="text-muted">186.188.154.225</span></td>
-                                                        <td>
-                                                            <span class="text-muted">Oct 13, 2023 <span class="d-none d-sm-inline-block">05:43 AM</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <a href="javascript:void(0);"><i class="feather feather-x text-danger"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="fw-medium text-dark text-start ps-4">Chrome on iMac</td>
-                                                        <td><span class="text-muted">192.149.122.128</span></td>
-                                                        <td>
-                                                            <span class="text-muted">Oct 03, 2023 <span class="d-none d-sm-inline-block">04:12 AM</span></span>
-                                                        </td>
-                                                        <td>
-                                                            <a href="javascript:void(0);"><i class="feather feather-x text-danger"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="notificationsTab" role="tabpanel">
                                     <div class="table-responsive">

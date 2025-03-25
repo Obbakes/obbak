@@ -242,7 +242,7 @@
                         </div>
                     </div>
                 </div>    
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">        
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">        
 					<?php foreach($ofertas as $oferta) { ?>    
 					<div class="p-4"> <!-- Aumentamos el margen inferior -->
 						<div class="card shadow-none border oferta oferta-<?=$oferta->id_oferta?>">
