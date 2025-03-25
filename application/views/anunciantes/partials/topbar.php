@@ -166,46 +166,21 @@
                                 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="dropdown">
                                     <span class="hstack">
                                         <i class="feather-dollar-sign me-2"></i>
-                                        <span>Subscriptions</span>
+                                        <span>Perfil</span>
                                     </span>
                                     <i class="feather-chevron-right ms-auto me-0"></i>
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a href="javascript:void(0);" class="dropdown-item">
+                                    <a href="http://localhost:8000/obbak/anunciantes/perfilEmpresa" class="dropdown-item">
                                         <span class="hstack">
                                             <i class="wd-5 ht-5 bg-gray-500 rounded-circle me-3"></i>
-                                            <span>Plan</span>
+                                            <span>Perfil Inversor</span>
                                         </span>
                                     </a>
                                     <a href="javascript:void(0);" class="dropdown-item">
                                         <span class="hstack">
                                             <i class="wd-5 ht-5 bg-gray-500 rounded-circle me-3"></i>
-                                            <span>Billings</span>
-                                        </span>
-                                    </a>
-                                    <a href="javascript:void(0);" class="dropdown-item">
-                                        <span class="hstack">
-                                            <i class="wd-5 ht-5 bg-gray-500 rounded-circle me-3"></i>
-                                            <span>Referrals</span>
-                                        </span>
-                                    </a>
-                                    <a href="javascript:void(0);" class="dropdown-item">
-                                        <span class="hstack">
-                                            <i class="wd-5 ht-5 bg-gray-500 rounded-circle me-3"></i>
-                                            <span>Payments</span>
-                                        </span>
-                                    </a>
-                                    <a href="javascript:void(0);" class="dropdown-item">
-                                        <span class="hstack">
-                                            <i class="wd-5 ht-5 bg-gray-500 rounded-circle me-3"></i>
-                                            <span>Statements</span>
-                                        </span>
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="javascript:void(0);" class="dropdown-item">
-                                        <span class="hstack">
-                                            <i class="wd-5 ht-5 bg-gray-500 rounded-circle me-3"></i>
-                                            <span>Subscriptions</span>
+                                            <span>Perfil Usuario</span>
                                         </span>
                                     </a>
                                 </div>
@@ -214,22 +189,6 @@
                             <a href="javascript:void(0);" class="dropdown-item">
                                 <i class="feather-user"></i>
                                 <span>Profile Details</span>
-                            </a>
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="feather-activity"></i>
-                                <span>Activity Feed</span>
-                            </a>
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="feather-dollar-sign"></i>
-                                <span>Billing Details</span>
-                            </a>
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="feather-bell"></i>
-                                <span>Notifications</span>
-                            </a>
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <i class="feather-settings"></i>
-                                <span>Account Settings</span>
                             </a>
                             <div class="dropdown-divider"></div>
                             <a href="https://app.obbak.es/inicio/logout" class="dropdown-item">
