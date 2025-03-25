@@ -11,17 +11,17 @@
     <title>Obbak || Panel</title>
     <!--! END:  Apps Title-->
     <!--! BEGIN: Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="https://app.obbak.es/assets/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:8000/obbak/assets/images/favicon.ico" />
     <!--! END: Favicon-->
     <!--! BEGIN: Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="https://app.obbak.es/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/obbak/assets/css/bootstrap.min.css" />
     <!--! END: Bootstrap CSS-->
     <!--! BEGIN: Vendors CSS-->
-    <link rel="stylesheet" type="text/css" href="https://app.obbak.es/assets/vendors/css/vendors.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://app.obbak.es/assets/vendors/css/daterangepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/obbak/assets/vendors/css/vendors.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/obbak/assets/vendors/css/daterangepicker.min.css" />
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="https://app.obbak.es/assets/css/theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/obbak/assets/css/theme.min.css" />
     <!--! END: Custom CSS-->
     <!--! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries !-->
     <!--! WARNING: Respond.js doesn"t work if you view the page via file: !-->
@@ -136,7 +136,7 @@
                                         <i class="feather-trash-2 me-2"></i>
                                         <span>Delete</span>
                                     </a>
-                                    <a href="https://app.obbak.es/anunciantes/perfilEmpresa1" class="w-50 btn btn-primary">
+                                    <a href="http://localhost:8000/obbak/anunciantes/perfilEmpresa1" class="w-50 btn btn-primary">
                                         <i class="feather-edit me-2"></i>
                                         <span>Edit Profile</span>
                                     </a>
@@ -1795,18 +1795,18 @@
     <!--! Footer Script !-->
     <!--! ================================================================ !-->
     <!--! BEGIN: Vendors JS !-->
-    <script src="https://app.obbak.es/assets/vendors/js/vendors.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/vendors/js/vendors.min.js"></script>
     <!-- vendors.min.js {always must need to be top} -->
-    <script src="https://app.obbak.es/assets/vendors/js/daterangepicker.min.js"></script>
-    <script src="https://app.obbak.es/assets/vendors/js/apexcharts.min.js"></script>
-    <script src="https://app.obbak.es/assets/vendors/js/circle-progress.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/vendors/js/daterangepicker.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/vendors/js/apexcharts.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/vendors/js/circle-progress.min.js"></script>
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
-    <script src="https://app.obbak.es/assets/js/common-init.min.js"></script>
-    <script src="https://app.obbak.es/assets/js/dashboard-init.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/js/common-init.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/js/dashboard-init.min.js"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
-    <script src="https://app.obbak.es/assets/js/theme-customizer-init.min.js"></script>
+    <script src="http://localhost:8000/obbak/assets/js/theme-customizer-init.min.js"></script>
     <!--! END: Theme Customizer !-->
     
 </body>
