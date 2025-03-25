@@ -38,9 +38,7 @@
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
-<div class="nxl-container">
-    <div class="nxl-content">
-    <main class="nxl-container">
+<main class="nxl-container">
         <div class="nxl-content">
             <!-- [ page-header ] start -->
             <div class="page-header">
@@ -52,34 +50,6 @@
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item">View</li>
                     </ul>
-                </div>
-                <div class="page-header-right ms-auto">
-                    <div class="page-header-right-items">
-                        <div class="d-flex d-md-none">
-                            <a href="javascript:void(0)" class="page-header-right-close-toggle">
-                                <i class="feather-arrow-left me-2"></i>
-                                <span>Back</span>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-                            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand successAlertMessage">
-                                <i class="feather-star"></i>
-                            </a>
-                            <a href="javascript:void(0);" class="btn btn-icon btn-light-brand">
-                                <i class="feather-eye me-2"></i>
-                                <span>Follow</span>
-                            </a>
-                            <a href="customers-create.html" class="btn btn-primary">
-                                <i class="feather-plus me-2"></i>
-                                <span>Create Customer</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="d-md-none d-flex align-items-center">
-                        <a href="javascript:void(0)" class="page-header-right-open-toggle">
-                            <i class="feather-align-right fs-20"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
             <!-- [ page-header ] end -->
@@ -102,20 +72,6 @@
                                         <a href="javascript:void(0);" class="fs-14 fw-bold d-block"><?php echo (!empty($aviso_error)) ? set_value('nombre') : $cliente->nombre; ?></a>
                                         <a href="javascript:void(0);" class="fs-12 fw-normal text-muted d-block"><?php echo (!empty($aviso_error)) ? set_value('email') : $cliente->email; ?></a>
                                     </div>
-                                    <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4">
-                                        <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                            <h6 class="fs-15 fw-bolder">28.65K</h6>
-                                            <p class="fs-12 text-muted mb-0">Followers</p>
-                                        </div>
-                                        <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                            <h6 class="fs-15 fw-bolder">38.85K</h6>
-                                            <p class="fs-12 text-muted mb-0">Following</p>
-                                        </div>
-                                        <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
-                                            <h6 class="fs-15 fw-bolder">43.67K</h6>
-                                            <p class="fs-12 text-muted mb-0">Engagement</p>
-                                        </div>
-                                    </div>
                                 </div>
                                 <ul class="list-unstyled mb-4">
                                     <li class="hstack justify-content-between mb-4">
@@ -134,11 +90,11 @@
                                 <div class="d-flex gap-2 text-center pt-4">
                                     <a href="javascript:void(0);" class="w-50 btn btn-light-brand">
                                         <i class="feather-trash-2 me-2"></i>
-                                        <span>Delete</span>
+                                        <span>Borrar</span>
                                     </a>
                                     <a href="http://localhost:8000/obbak/anunciantes/perfilEmpresa1" class="w-50 btn btn-primary">
                                         <i class="feather-edit me-2"></i>
-                                        <span>Edit Profile</span>
+                                        <span>Editar cuenta</span>
                                     </a>
                                 </div>
                             </div>
@@ -395,12 +351,12 @@
                                     </div>
                                     <div class="profile-details mb-5">
                                         <div class="mb-4 d-flex align-items-center justify-content-between">
-                                            <h5 class="fw-bold mb-0">Profile Details:</h5>
-                                            <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">Edit Profile</a>
+                                            <h5 class="fw-bold mb-0">Detalles de la cuenta:</h5>
+                                            <a href="http://localhost:8000/obbak/anunciantes/perfilEmpresa1" class="btn btn-sm btn-light-brand">Editar cuenta:</a>
                                         </div>
                                         <div class="row g-0 mb-4">
-                                            <div class="col-sm-6 text-muted">Full Name:</div>
-                                            <div class="col-sm-6 fw-semibold">Alexandra Della</div>
+                                            <div class="col-sm-6 text-muted">Nombre y apellidos:</div>
+                                            <div class="col-sm-6 fw-semibold"><?php echo (!empty($aviso_error)) ? set_value('nombre') : $cliente->nombre; ?></div>
                                         </div>
                                         <div class="row g-0 mb-4">
                                             <div class="col-sm-6 text-muted">Surname:</div>
@@ -1662,153 +1618,7 @@
             </div>
             <!-- [ Main Content ] end -->
         </div>
-        <!-- [ Footer ] start -->
-        <footer class="footer">
-            <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
-                <span>Copyright ©</span>
-                <script>
-                    document.write(new Date().getFullYear());
-                </script>
-            </p>
-            <div class="d-flex align-items-center gap-4">
-                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
-                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
-                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
-            </div>
-        </footer>
-        <!-- [ Footer ] end -->
     </main>
-
-<div class="page-content">
-    <div class="container-fluid">
-        <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="header header-medios">
-                                    <h2 class="text-lowercase text-capitalize">Perfil<span>de Cliente</span></h2>
-                                    </div>
-
-                        <form method="post" action="<?php echo base_url();?>anunciantes/perfilEmpresa/1" class="form-horizontal">
-
-                            <div class="row clearfix">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Empresa</label>
-                                        <input name="nombre" id="nombre" type="text" value="<?php echo (!empty($aviso_error)) ? set_value('nombre') : $cliente->nombre; ?>" class="form-control" >
-                                        <?php echo form_error('nombre'); ?>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Nombre Comercial</label>
-                                        <input name=nombre_comercial id="nombre_comercial" type="text" value="<?php echo (!empty($aviso_error)) ? set_value('nombre_comercial') : $cliente->nombre_comercial; ?>" class="form-control" >
-                                        <?php echo form_error('nombre_comercial'); ?>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row clearfix">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">CIF</label>
-                                        <input name="cif" id="cif" type="text" value="<?php echo (!empty($aviso_error)) ? set_value('cif') : $cliente->cif; ?>" class="form-control">
-                                        <?php echo form_error('cif'); ?>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Código Postal</label>
-                                        <input name="cp" id="cp" type="text" value="<?php echo (!empty($aviso_error)) ? set_value('cp') : $cliente->cp; ?>" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row clearfix">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Población</label>
-                                        <input name="poblacion" id="poblacion" type="text" value="<?php echo (!empty($aviso_error)) ? set_value('poblacion') : $cliente->poblacion; ?>" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Web</label>
-                                        <input name="web" id="web" type="text" value="<?php echo (!empty($aviso_error)) ? set_value('web') : $cliente->web; ?>" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row clearfix">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Teléfono</label>
-                                        <input name="telefono" id="telefono" type="text" value="<?php echo (!empty($aviso_error)) ? set_value('telefono') : $cliente->telefono; ?>" class="form-control" >
-                                        <?php echo form_error('telefono'); ?>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Dirección</label>
-                                        <input name="direccion" id="direccion" type="text" value="<?php echo (!empty($aviso_error)) ? set_value('direccion') : $cliente->direccion; ?>" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Fecha Nacimiento</label>
-                                        <input name="Fecha_nacimiento" id="Fecha_nacimiento" type="date" value="<?php echo (!empty($aviso_error)) ? set_value('Fecha_nacimiento') : $cliente->Fecha_nacimiento; ?>" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row clearfix m-t-30">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <button class="boton waves-effect" type="submit">Guardar cambios</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- #END# Hover Rows -->
-
-        </div>
-		<div style="height: 20px;"></div> <!-- Espacio extra -->
-        <!-- [ Footer ] start -->
-		<?php include 'partials/footer.php'; ?> 
-        <!-- [ Footer ] end -->
-	</main>
-    <!--! ================================================================ !-->
-    <!--! [End] Main Content !-->
-    <!--! ================================================================ !-->
-    <!--! ================================================================ !-->
-    <!--! BEGIN: Theme Customizer !-->
-    <!--! ================================================================ !-->
-    <!--! [End] Theme Customizer !-->
-    <!--! ================================================================ !-->
-    <!--! ================================================================ !-->
-    <!--! Footer Script !-->
-    <!--! ================================================================ !-->
-    <!--! BEGIN: Vendors JS !-->
-    <script src="http://localhost:8000/obbak/assets/vendors/js/vendors.min.js"></script>
-    <!-- vendors.min.js {always must need to be top} -->
-    <script src="http://localhost:8000/obbak/assets/vendors/js/daterangepicker.min.js"></script>
-    <script src="http://localhost:8000/obbak/assets/vendors/js/apexcharts.min.js"></script>
-    <script src="http://localhost:8000/obbak/assets/vendors/js/circle-progress.min.js"></script>
-    <!--! END: Vendors JS !-->
-    <!--! BEGIN: Apps Init  !-->
-    <script src="http://localhost:8000/obbak/assets/js/common-init.min.js"></script>
-    <script src="http://localhost:8000/obbak/assets/js/dashboard-init.min.js"></script>
-    <!--! END: Apps Init !-->
-    <!--! BEGIN: Theme Customizer  !-->
-    <script src="http://localhost:8000/obbak/assets/js/theme-customizer-init.min.js"></script>
-    <!--! END: Theme Customizer !-->
-    
 </body>
 
 </html>

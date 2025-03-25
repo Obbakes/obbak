@@ -252,11 +252,7 @@
                                 </div>
                             </div>
 						</form>	
-						
-						<form action="imagenUsuario" method="post" enctype="multipart/form-data">
-    <input type="file" name="avatar">
-    <button type="submit">Subir Imagen</button>
-</form>
+					
 
  
                                         </div>
