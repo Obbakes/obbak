@@ -1,4 +1,3 @@
-<?php include 'partials/main.php'; ?>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />

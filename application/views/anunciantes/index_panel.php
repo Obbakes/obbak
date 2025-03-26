@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
@@ -436,7 +436,7 @@
     <script src="http://localhost:8000/obbak/assets/js/dashboard-init.min.js"></script>
     <!--! END: Apps Init !-->
     <!--! BEGIN: Theme Customizer  !-->
-    <script src="http://localhost:8000/obbak/assets/js/theme-customizer-init.min.js"></script>
+
     <!--! END: Theme Customizer !-->
     
 </body>
